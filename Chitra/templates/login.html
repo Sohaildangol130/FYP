@@ -8,10 +8,11 @@
                     <h1>Glad you're back!!</h1>
                     <h4>Let's login and start sharing your works.</h4>
                 </div>
-                <form class="login-page__login-form" action="">
-                    <div class="login-page__login-form--email-username">
-                        <p>E-mail/Username</p>
-                        <input class="login-page__login-form--email-username--input-text" type="text" name="email-username">
+                <form class="login-page__login-form" action="login" method="POST">
+                    {% csrf_token %}
+                    <div class="login-page__login-form--username">
+                        <p>Username</p>
+                        <input class="login-page__login-form--email-username--input-text" type="text" name="username">
                     </div>
                     <div class="login-page__login-form--password">
                         <p>Password</p>

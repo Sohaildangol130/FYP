@@ -3,7 +3,19 @@ from django.contrib.auth.models import User, auth
 import random
 # Create your views here.
 def login(request):
-    return render(request, 'login.html')
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+        print (username, password)
+        if user is not None:
+            auth.login(request, user)
+            print ("not none")
+            return redirect('/')
+        return render(request, 'login.html')
+    else:
+        print ("new page")
+        return render(request, 'login.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -22,3 +34,7 @@ def signup(request):
         return redirect ('/')
     else:
         return render(request, 'register.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')

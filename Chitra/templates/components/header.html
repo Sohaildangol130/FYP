@@ -8,19 +8,8 @@
             </div>
             <div class="header__nav-bar">
                 <ul class="header__nav-bar--all-nav-items">
-                    <div class="all-nav-items__no-user">
-                        <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--search-bar">
-                            <form>
-                                <input type="text" name="search" placeholder="Search..">
-                              </form>
-                        </li>
-                        <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--login">
-                            <a href="auth/login">
-                                <button><p>Login</p></button>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="all-nav-items__user display-none">
+                    {% if user.is_authenticated %}
+                    <div class="all-nav-items__user">
                         <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--search-bar">
                             <form>
                                 <input type="text" name="search" placeholder="Search..">
@@ -132,10 +121,25 @@
                                 <a href="#"><p class="profile-box--links">Settings</p></a>
                                 <a href="#"><p class="profile-box--links">Liked posts</p></a>
                                 <a href="#"><p class="profile-box--links">Saved posts</p></a>
-                                <a href="#"><button class="profile-box--links logout"><p>Logout</p></button></a>
+                                <a href="auth/logout"><button class="profile-box--links logout"><p>Logout</p></button></a>
                             </div>
                         </li>
                     </div>
+                    {% else %}
+                    <div class="all-nav-items__no-user">
+                        <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--search-bar">
+                            <form>
+                                <input type="text" name="search" placeholder="Search..">
+                              </form>
+                        </li>
+                        <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--login">
+                            <a href="auth/login">
+                                <button><p>Login</p></button>
+                            </a>
+                        </li>
+                    </div>
+                    {% endif %}
+                    
                     
                     <li class="header__nav-bar--all-nav-items--item nav-item--mobile-burger">
                         <i class="fas fa-bars"></i>
