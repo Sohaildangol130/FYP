@@ -1,0 +1,101 @@
+.upload__main-container{
+    margin: 50px 0;
+}
+
+.upload-photo__upload{
+    position: relative;
+    border: 1px $border-color dashed;
+    border-radius: 10px;
+    padding: 115px 0;
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+.upload-photo__upload input{
+    opacity: 0.0; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0; 
+    width: 100%; 
+    height:100%;
+}
+
+.upload-photo__upload--upload-icon{
+    font-size: 170px;
+}
+
+.upload-photo__upload--main-text{
+    margin-top: 30px;
+}
+
+.upload-photo__upload--secondary-text{
+    margin-top: 10px;
+}
+
+.main-container__title{
+    margin-top: 30px;
+}
+
+.main-container__tags,
+.main-container__description{
+    margin-top: 20px;
+}
+
+.main-container__description textarea{
+    height: 300px;
+}
+
+.tags--suggestions{
+    margin-top: 10px;
+}
+
+.tags--suggestions--all-suggestions{
+    margin-top: 5px;
+    display: flex;
+}
+
+.tags--suggestions--all-suggestions p{
+    margin-right: 10px;
+}
+
+.main-container__hr{
+    margin: 60px 0;
+    border-top: 1px $border-color solid;
+}
+
+.sell-art__heading{
+    text-align: center;
+}
+
+.sell-art__art-type{
+    margin-top: 30px;
+}
+
+.all-selector--selector{
+    display: flex;
+    align-items: center;
+}
+
+.all-selector--selector p{
+    margin-left: 10px;
+}
+
+.sell-art__art-price{
+    margin-top: 20px;
+}
+
+.main-container__submit-and-cancel-btn{
+    margin-top: 30px;
+}
+
+@media only screen and (max-width:768px){
+    .main-container__cancel-btn, .main-container__submit-btn{
+        width: 100%;
+    }
+    .main-container__cancel-btn{
+        margin-top: 20px;
+    }
+}

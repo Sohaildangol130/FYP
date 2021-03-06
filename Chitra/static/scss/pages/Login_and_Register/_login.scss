@@ -1,0 +1,68 @@
+.login-page{
+    height: 100vh;
+}
+
+.login-page__left-side{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page__left-side{
+    background-color: rgb(255, 255, 255);
+}
+
+.login-page__right-side{
+    background-color: rgb(124, 124, 124);
+}
+
+.login-page__login-form--email-username{
+    margin-top: 30px;
+}
+
+.login-page__login-form--password{
+    margin-top: 20px;
+}
+
+.login-page__login-form--button-submit--forget-password{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.login-page__login-form--forget-password{
+    margin-left: 20px;
+}
+
+.login-page__right-side{
+    border-radius: 10px 0 0 10px;
+    background-image: url('../img/Login\ and\ Register/Signup-login-bg.png');
+}
+
+.login-page__right-side{
+    padding: 30px;    
+    display: grid;
+    align-items: end;
+    text-align: center;
+}
+
+.login-page__signup-box{
+    height: 208px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.login-page__signup-page-link-button{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px){
+    .login-page__right-side{
+        display: none;
+    }
+
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+//variables
+//font-sizes
+$h1-size: 44px;
+$h2-size: 35px;
+$h3-size: 30px;
+$h4-size: 24px;
+$h5-size: 20px;
+$h6-size: 16px;
+$p-size: 14px;
+
+//font family
+$font-family: 'Open Sans', sans-serif;
+
+//font weight
+$bold: 700;
+$semi-bold: 600;
+$regular: 400;
+$light: 300;
+
+//font-family
+h1,h2,h3,h4,h5,h6,p{
+    font-family: $font-family;
+}
+
+//font colors
+h1,h2,h3{
+    color: $primary-black;
+}
+
+h4,h5,h6{
+    color: $secondary-black;
+}
+
+p{
+    color: $tertiary-color;
+}
+
+//font sizes
+h1{
+    font-size: $h1-size;
+    font-weight: $bold;
+}
+h2{
+    font-size: $h2-size;
+    font-weight: $semi-bold;
+
+}
+h3{
+    font-size: $h3-size;
+    font-weight: $semi-bold;
+
+}
+h4{
+    font-size: $h4-size;
+    font-weight: $regular;
+
+}
+h5{
+    font-size: $h5-size;
+    font-weight: $regular;
+}
+h6{
+    font-size: $h6-size;
+    font-weight: $regular;
+}
+p{
+    font-size: $p-size;
+    font-weight: $light;
+}
+
+a{
+    text-decoration: none;
+}
+
+.link{
+    @extend .text-link--color;
+    font-style: italic;
+}
+
+.bold{
+    font-weight: 700;
+}

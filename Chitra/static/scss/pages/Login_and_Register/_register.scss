@@ -1,0 +1,96 @@
+.signup-page{
+    min-height: 100vh;
+    height: 100%;
+}
+
+.signup-page__left-side{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.signup-page__right-side{
+    border-radius: 10px 0 0 10px;
+    background-image: url('../img/Login\ and\ Register/Signup-login-bg.png');
+}
+
+.signup-page__right-side{
+    padding: 30px;    
+    display: grid;
+    align-items: end;
+    text-align: center;
+}
+
+.signup-page__description--logo{
+    display: none;
+}
+
+.signup-page__login-box{
+    height: 208px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.signup-page__login-page-link-button{
+    margin-top: 20px;
+}
+
+.signup-page__signup-form--*
+{
+    padding-left: 0;
+}
+
+.signup-page__signup-form--row--first-name--last-name,
+.signup-page__signup-form--row--agree-terms{
+    margin-top: 30px;
+}
+
+.signup-page__signup-form--row--email,
+.signup-page__signup-form--row--password--re-enter-password,
+.signup-page__signup-form--row--submit{
+    margin-top: 20px;
+}
+
+.signup-page__signup-form--email--input-email{
+    width: 100%;
+}
+
+.signup-page__signup-form--agree-terms{
+    display: flex;
+    align-items: center;
+}
+
+.signup-page__signup-form--agree-terms--input-checkbox{
+    margin-right: 15px;
+}
+
+.signup-page__responsive-login-box{
+    display: none !important;
+}
+
+@media only screen and (max-width: 768px){
+    .signup-page__description--logo{
+        display: block;
+    }
+    
+    .signup-page__right-side{
+        display: none;
+    }
+
+    .signup-page__signup-form--last-name, .signup-page__signup-form--re-enter-password{
+        margin-top: 20px;
+    }
+
+    .signup-page__signup-form--submit--button-submit{
+        width: 100%;
+    }
+
+    .signup-page__responsive-login-box{
+        display: none;
+    }
+}

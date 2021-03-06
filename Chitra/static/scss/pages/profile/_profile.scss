@@ -1,0 +1,144 @@
+#profile-page{
+    .user-details__main-container{
+        padding: 50px;
+        .main-container__profile-picture,
+    .main-container__follow-button
+    {
+        display: grid;
+        justify-content: center;
+    }
+    
+    .profile-picture{
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        background-color: $primary-black;
+    }
+    
+    .main-container__user-name-and-location{
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .main-container__follow-button{
+        margin-top: 30px;
+    }
+    
+    .main-container__user-chitra-details{
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid $border-color;
+    }
+    
+    .followers--total-followers,
+    .following--total-following,
+    .likes--total-likes,
+    .saves--total-saves{
+        text-align: right;
+    }
+    
+    .user-chitra-details--saves, 
+    .user-chitra-details--likes, 
+    .user-chitra-details--following{
+        margin-top: 20px;
+    }
+    
+    .main-container__social-medias{
+        padding: 20px 0;
+    }
+    
+    .social-medias--all-links{
+        margin-top: 10px;
+    }
+    
+    .social-medias--all-links i{
+        font-size: 22px;
+        margin-right: 30px;
+    }
+    }
+    
+    .user-posts__main-container{
+        .main-container__all-posts{
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+            gap: 30px;
+        }
+        
+        .single-post--image{
+            position: relative;
+            overflow: hidden;
+            img{
+                transition: .3s all;
+                max-width: 100%;
+            }
+        }
+        
+        .single-post--image:hover{
+            img{
+                transform: scale(1.1,1.1);
+            }
+        }
+        
+        .image--original{
+            background-color: $primary-black;
+            padding: 15px 20px;
+            position: absolute;
+            bottom: 4px;
+            right: 0;
+        }
+        
+        .description--names , .description--like-save{
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
+        .description--like-save{
+            i{
+                color: $primary-white;
+                font-size: 22px;
+                float: right;
+                margin: 10px 0 0 20px;
+                transition: 0.3s all;
+                cursor: pointer;
+            }    
+        }
+        
+        .description--save{
+            -webkit-text-stroke: 1px $primary-green;
+        }
+        
+        .description--like{
+            -webkit-text-stroke: 1px $primary-red;        
+        }
+        
+        .description--like:hover, .description--save:hover{
+            transform: scale(0.9, 0.9);
+        }
+        
+        .description--like:hover{
+            color: $primary-red-hover;
+        }
+        
+        .description--save:hover{
+            color: $primary-green-hover;
+        }
+        
+        .description--like--checked{
+            animation: like_animation .5s 1 forwards;
+        }
+        
+        .description--save--checked{
+            animation: save_animation .5s 1 forwards;    
+        }
+    }
+    
+    @media only screen and (max-width: 768px){
+        .user-posts__main-container{
+            .main-container__all-posts{
+                padding: 0px;
+            }
+        }
+    }
+    
+}

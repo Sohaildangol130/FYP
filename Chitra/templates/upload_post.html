@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post page</title>
+    <link rel="stylesheet" href="static/vendors/Bootstrap/bootstrap-grid.css">
+    <script src="static/vendors/Jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="header" class="col-lg-12">              
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-sm-0"></div>
+            <div class="col-md-8 col-sm-12 upload__main-container">
+                <form action="#" class="container-fluid">
+                    <div class="row main-container__upload-photo">
+                        <div class="col-12 upload-photo__upload">
+                            <img class="upload--uploaded-image" src="" alt="">
+                            <input class="file" type="file"  accept="image/*"/>
+                            <i class="fas fa-upload upload-photo__upload--upload-icon"></i>
+                            <h3 class="upload-photo__upload--main-text">Click here to upload your artwork.</h3>
+                            <h6 class="upload-photo__upload--secondary-text">Image size of 3:2 ratio is recommended.</h6>
+                        </div>
+                    </div>
+                    <div class="row main-container__title">
+                        <h4 class="bold">Title</h4>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="row main-container__tags">
+                        <h4 class="bold">Tags</h4>
+                        <input type="text" name="" id="">
+                        <div class="tags--suggestions">
+                            <p class="bold tags--suggestions--heading">Suggested tags</p>
+                            <div class="tags--suggestions--all-suggestions">
+                                <p>Art</p>
+                                <p>Art</p>
+                                <p>Art</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row main-container__description">
+                        <h4 class="bold">Description</h4>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="row main-container__hr">
+                    </div>
+                    <div class="row main-container__sell-art">
+                        <div class="col-12">
+                            <div class="row sell-art__heading">
+                                <div class="col-12">
+                                    <h4 class="bold">Would you like to sell your art?</h4>
+                                </div>
+                            </div>
+                            <div class="row sell-art__art-type align-items-center">
+                                <div class="col-md-2 .col-sm-12">
+                                    <h5>Art type:</h5>
+                                </div>
+                                <div class="col-md-10 .col-sm-12">
+                                    <div class="row art-type--all-selector">
+                                        <div class="col-2 all-selector--selector">
+                                            <input type="radio" name="price" value="original">
+                                            <p>Original</p>
+                                        </div>
+                                        <div class="col-2 all-selector--selector">
+                                            <input type="radio" name="price" value="copy">
+                                            <p>Copy</p>
+                                        </div>
+                                        <div class="col-2 all-selector--selector">
+                                            <input type="radio" name="price" value="original">
+                                            <p>Not today</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row sell-art__art-price align-items-center">
+                                
+                                <div class="col-md-2 .col-sm-12">
+                                    <h5>Price:</h5>
+                                </div>
+                                <div class="col-md-10 .col-sm-12">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center main-container__submit-and-cancel-btn">
+                        <div class="col-md-3 col-sm-12">
+                            <button type="submit" class="main-container__submit-btn"><p>Upload</p></button>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <button type="cancel" class="main-container__cancel-btn"><p>Cancel</p></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2 col-sm-0"></div>
+        </div>
+    </div>
+
+    <!-- view image after upload -->
+    <script>
+        function filePreview(input){
+            if (input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function (e){
+                    $('#uploadForm + img').remove();
+                    $('#uploadForm').after ('img src="'+e.target.result+'"style="width:100%;"')
+                }
+            }
+          }
+
+          $(".file").change(function(){
+              filePreview()
+          })
+    </script>
+
+    <script src="static/js/load_components.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>
