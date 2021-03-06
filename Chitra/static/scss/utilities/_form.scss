@@ -1,0 +1,12 @@
+input[type=text],input[type=password], input[type=email], textarea{
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+    width: 100%;
+}
+
+input[type=checkbox]{
+    height: 22px;
+    width: 22px;
+}

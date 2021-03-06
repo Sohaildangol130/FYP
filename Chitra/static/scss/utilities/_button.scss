@@ -1,0 +1,16 @@
+button{
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: $primary-btn-color;
+    p{
+    @extend .bold;
+
+        color: $primary-btn-text-color;
+    }
+
+    i{
+        font-size: 16px;
+        margin-left: 15px;
+    }
+}
