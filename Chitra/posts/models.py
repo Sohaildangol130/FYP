@@ -5,4 +5,5 @@ from django.contrib.auth.models import User
 class all_posts(models.Model):
     post_name = models.CharField(max_length=255)
     description = models.TextField()
+    image = models.ImageField(upload_to="media/all_posts")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
