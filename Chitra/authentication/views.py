@@ -10,11 +10,9 @@ def login(request):
         print (username, password)
         if user is not None:
             auth.login(request, user)
-            print ("not none")
             return redirect('/')
         return render(request, 'login.html')
     else:
-        print ("new page")
         return render(request, 'login.html')
 
 def signup(request):
