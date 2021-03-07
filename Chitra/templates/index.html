@@ -4,10 +4,11 @@
 <div class="container-fluid">
     
     <div class="contents__main-container">
+        {% for post in posts %}
         <div class="contents__main-container__content content--original">
-            <a href="view_post.html">
+            <a href="posts/{{post.id}}">
                 <div class="content--image">
-                    <img src="{% static 'img/index/art.png' %}" alt="">
+                    <img src="{{post.image.url}}" alt="">
                     <div class="content--image--original">
                         <p class="white-color bold">Original</p>
                     </div>
@@ -16,8 +17,8 @@
             <div class="container-fluid">
                 <div class="content--description row">
                     <div class="col-8 content--description--names">
-                        <h5 class="bold">Abstract art</h5>
-                        <p>by Aakriti Maharjan</p>
+                        <h5 class="bold">{{post.post_name}}</h5>
+                        <p>by {{post.user.first_name}} {{post.user.last_name}}</p>
                     </div>
                     <div class="col-4 content--description--like-save">
                         <i class="fas fa-bookmark content--description--save"></i>
@@ -26,138 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="contents__main-container__content">
-            <a href="view_post.html">
-                <div class="content--image">
-                    <img src="{% static 'img/index/art.png' %}" alt="">
-                    <div class="content--image--original">
-                        <p class="white-color bold">Original</p>
-                    </div>
-                </div>
-            </a>
-            <div class="container-fluid">
-                <div class="content--description row">
-                    <div class="col-8 content--description--names">
-                        <h5 class="bold">Abstract art</h5>
-                        <p>by Aakriti Maharjan</p>
-                    </div>
-                    <div class="col-4 content--description--like-save">
-                        <i class="fas fa-bookmark content--description--save"></i>
-                        <i class="fas fa-heart content--description--like"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contents__main-container__content content--original">
-            <a href="view_post.html">
-                <div class="content--image">
-                    <img src="{% static 'img/index/art.png' %}" alt="">
-                    <div class="content--image--original">
-                        <p class="white-color bold">Original</p>
-                    </div>
-                </div>
-            </a>
-            <div class="container-fluid">
-                <div class="content--description row">
-                    <div class="col-8 content--description--names">
-                        <h5 class="bold">Abstract art</h5>
-                        <p>by Aakriti Maharjan</p>
-                    </div>
-                    <div class="col-4 content--description--like-save">
-                        <i class="fas fa-bookmark content--description--save"></i>
-                        <i class="fas fa-heart content--description--like"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contents__main-container__content content--original">
-            <a href="view_post.html">
-                <div class="content--image">
-                    <img src="{% static 'img/index/art.png' %}" alt="">
-                    <div class="content--image--original">
-                        <p class="white-color bold">Original</p>
-                    </div>
-                </div>
-            </a>
-            <div class="container-fluid">
-                <div class="content--description row">
-                    <div class="col-8 content--description--names">
-                        <h5 class="bold">Abstract art</h5>
-                        <p>by Aakriti Maharjan</p>
-                    </div>
-                    <div class="col-4 content--description--like-save">
-                        <i class="fas fa-bookmark content--description--save"></i>
-                        <i class="fas fa-heart content--description--like"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contents__main-container__content content--original">
-            <a href="view_post.html">
-                <div class="content--image">
-                    <img src="{% static 'img/index/art.png' %}" alt="">
-                    <div class="content--image--original">
-                        <p class="white-color bold">Original</p>
-                    </div>
-                </div>
-            </a>
-            <div class="container-fluid">
-                <div class="content--description row">
-                    <div class="col-8 content--description--names">
-                        <h5 class="bold">Abstract art</h5>
-                        <p>by Aakriti Maharjan</p>
-                    </div>
-                    <div class="col-4 content--description--like-save">
-                        <i class="fas fa-bookmark content--description--save"></i>
-                        <i class="fas fa-heart content--description--like"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contents__main-container__content">
-            <a href="view_post.html">
-                <div class="content--image">
-                    <img src="{% static 'img/index/art.png' %}" alt="">
-                    <div class="content--image--original">
-                        <p class="white-color bold">Original</p>
-                    </div>
-                </div>
-            </a>
-            <div class="container-fluid">
-                <div class="content--description row">
-                    <div class="col-8 content--description--names">
-                        <h5 class="bold">Abstract art</h5>
-                        <p>by Aakriti Maharjan</p>
-                    </div>
-                    <div class="col-4 content--description--like-save">
-                        <i class="fas fa-bookmark content--description--save"></i>
-                        <i class="fas fa-heart content--description--like"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contents__main-container__content">
-            <a href="view_post.html">
-                <div class="content--image">
-                    <img src="{% static 'img/index/art.png' %}" alt="">
-                    <div class="content--image--original">
-                        <p class="white-color bold">Original</p>
-                    </div>
-                </div>
-            </a>
-            <div class="container-fluid">
-                <div class="content--description row">
-                    <div class="col-8 content--description--names">
-                        <h5 class="bold">Abstract art</h5>
-                        <p>by Aakriti Maharjan</p>
-                    </div>
-                    <div class="col-4 content--description--like-save">
-                        <i class="fas fa-bookmark content--description--save"></i>
-                        <i class="fas fa-heart content--description--like"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
