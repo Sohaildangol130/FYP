@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>  
+    {% for i in post %}
+        <title>{{i.post_name}}</title>  
+    {% endfor%}
     {% include 'css_links/css_links.html' %}  
 </head>
 <body>
