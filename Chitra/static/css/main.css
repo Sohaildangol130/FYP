@@ -123,6 +123,19 @@ hr {
   width: 100%;
 }
 
+.error__alert {
+  padding: 10px;
+  background-color: #ffcccc;
+  border-radius: 7px;
+  border: 1px solid #ff9999;
+  margin-top: 30px;
+}
+
+.error__alert p {
+  color: red;
+  font-weight: 700;
+}
+
 .header {
   padding: 15px 30px;
   display: -webkit-box;

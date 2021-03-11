@@ -10,6 +10,11 @@
                     <h1>Welcome to Chitra.</h1>
                     <h4>Create, share, sell and grow as an artist.</h4>
                 </div>
+                {% for message in messages %}
+                <div class="error__alert">
+                    <p>{{message}}</p>
+                </div>
+                {% endfor%}
                 <form class="signup-page__signup-form" action="signup" method="POST">
                     {% csrf_token %}
                     <div class="signup-page__signup-form--row--first-name--last-name row">
@@ -38,12 +43,12 @@
                             <input type="password" name="re_password" class="signup-page__signup-form--re-enter-password--input-password">
                         </div>
                     </div>
-                    <div class="signup-page__signup-form--row--agree-terms row">
+                    <!-- <div class="signup-page__signup-form--row--agree-terms row">
                         <div class="signup-page__signup-form--agree-terms col-12">
-                            <input type="checkbox" class="signup-page__signup-form--agree-terms--input-checkbox" name="" id="">
+                            <input type="checkbox" class="signup-page__signup-form--agree-terms--input-checkbox" name="agree" id="">
                             <p>I agree the <u class="bold">Terms and Conditions</u> and agree to abide by it.</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="signup-page__signup-form--row--submit row">
                         <div class="signup-page__signup-form--submit col-12">
                             <button class="signup-page__signup-form--submit--button-submit"><p>Signup<i class="fas fa-arrow-right"></i></p></button>

@@ -1,0 +1,11 @@
+.error__alert{
+    padding: 10px;
+    background-color: hsl(0, 100%, 90%);
+    border-radius: 7px;
+    border: 1px solid hsl(0, 100%, 80%);
+    margin-top: 30px;
+    p{
+        color: red;
+        font-weight: 700;
+    }
+}

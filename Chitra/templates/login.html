@@ -8,6 +8,12 @@
                     <h1>Glad you're back!!</h1>
                     <h4>Let's login and start sharing your works.</h4>
                 </div>
+                
+                {% for message in messages %}
+                    <div class="error__alert">
+                        <p>{{message}}</p>
+                    </div>                    
+                {% endfor %}
                 <form class="login-page__login-form" action="login" method="POST">
                     {% csrf_token %}
                     <div class="login-page__login-form--username">
