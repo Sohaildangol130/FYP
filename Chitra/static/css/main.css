@@ -524,27 +524,18 @@ hr {
 
 .contents__main-container {
   padding: 50px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(270px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 30px;
 }
 
 .content--image {
-  position: relative;
-  overflow: hidden;
-}
-
-.content--image img {
+  background-position: center;
+  background-size: 100%;
+  height: 300px;
   -webkit-transition: .3s all;
   transition: .3s all;
-  max-width: 100%;
 }
 
-.content--image:hover img {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+.content--image:hover {
+  background-size: 110%;
 }
 
 .content--image--original {
@@ -834,27 +825,18 @@ hr {
 
 #profile-page .user-posts__main-container .main-container__all-posts {
   padding: 50px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(270px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 30px;
 }
 
 #profile-page .user-posts__main-container .single-post--image {
-  position: relative;
-  overflow: hidden;
-}
-
-#profile-page .user-posts__main-container .single-post--image img {
+  background-position: center;
+  background-size: 100%;
+  height: 300px;
   -webkit-transition: .3s all;
   transition: .3s all;
-  max-width: 100%;
 }
 
-#profile-page .user-posts__main-container .single-post--image:hover img {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+#profile-page .user-posts__main-container .single-post--image:hover {
+  background-size: 110%;
 }
 
 #profile-page .user-posts__main-container .image--original {
@@ -868,47 +850,6 @@ hr {
 #profile-page .user-posts__main-container .description--names, #profile-page .user-posts__main-container .description--like-save {
   padding-left: 0px;
   padding-right: 0px;
-}
-
-#profile-page .user-posts__main-container .description--like-save i {
-  color: #FFFFFF;
-  font-size: 22px;
-  float: right;
-  margin: 10px 0 0 20px;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  cursor: pointer;
-}
-
-#profile-page .user-posts__main-container .description--save {
-  -webkit-text-stroke: 1px #4eff95;
-}
-
-#profile-page .user-posts__main-container .description--like {
-  -webkit-text-stroke: 1px #ff4e4e;
-}
-
-#profile-page .user-posts__main-container .description--like:hover, #profile-page .user-posts__main-container .description--save:hover {
-  -webkit-transform: scale(0.9, 0.9);
-          transform: scale(0.9, 0.9);
-}
-
-#profile-page .user-posts__main-container .description--like:hover {
-  color: #ff9c9c;
-}
-
-#profile-page .user-posts__main-container .description--save:hover {
-  color: #9cffc4;
-}
-
-#profile-page .user-posts__main-container .description--like--checked {
-  -webkit-animation: like_animation .5s 1 forwards;
-          animation: like_animation .5s 1 forwards;
-}
-
-#profile-page .user-posts__main-container .description--save--checked {
-  -webkit-animation: save_animation .5s 1 forwards;
-          animation: save_animation .5s 1 forwards;
 }
 
 @media only screen and (max-width: 768px) {

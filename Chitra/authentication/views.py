@@ -7,8 +7,8 @@ def login(request):
     if request.method == "POST":
         email = request.POST['email']
         password = request.POST['password']
-        if (User.objects.get(email__exact=email).exists ):
-            user = auth.authenticate(username=User.objects.get(email__exact=email).exists, password=password)
+        if (User.objects.get(email__exact=email) ):
+            user = auth.authenticate(username=User.objects.get(email__exact=email), password=password)
             if user is not None:
                 auth.login(request, user)
                 return redirect('/')

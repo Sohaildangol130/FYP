@@ -3,15 +3,14 @@
 {% block body %}
 <div class="container-fluid">
     
-    <div class="contents__main-container">
+    <div class="contents__main-container row">
         {% for post in object_list %}
-        <div class="contents__main-container__content content--original">
+        <div class="contents__main-container__content content--original col-lg-3 col-md-6 col-sm-12">
             <a href="posts/{{post.id}}">
-                <div class="content--image">
-                    <img src="{{post.image.url}}" alt="">
-                    <div class="content--image--original">
+                <div class="content--image" style="background-image: url({{post.image.url}});">
+                    <!-- <div class="content--image--original">
                         <p class="white-color bold">Original</p>
-                    </div>
+                    </div> -->
                 </div>
             </a>
             <div class="container-fluid">

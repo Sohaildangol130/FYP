@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post page</title>
-    <link rel="stylesheet" href="static/vendors/Bootstrap/bootstrap-grid.css">
-    <script src="static/vendors/Jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="/static/css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    
-</head>
-<body>
+{% extends 'layouts/application.html' %}
+{% load static %}
+{% block body %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="header" class="col-lg-12">              
-            </div>
-        </div>
-
         <div id="profile-page" class="row">
             <div class="col-md-3 col-sm-0 user-details__main-container">
                 <div class="row">
@@ -29,18 +14,18 @@
                 <div class="row">
                     <div class="col-12 main-container__user-name-and-location">
                         <h4 class="bold">
-                            Sohail Dangol
+                            {{user.first_name}} {{user.last_name}}
                         </h4>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12 main-container__follow-button">
                         <a href="#">
                             <button class="follow-button"><p>Follow</p></button>
                         </a>
                     </div>
-                </div>
-                <div class="row">
+                </div> -->
+                <!-- <div class="row">
                     <div class="col-12 main-container__user-chitra-details">
                         <div class="row user-chitra-details--followers">
                             <div class="col-6">
@@ -76,7 +61,7 @@
                             </div>
                         </div>                        
                     </div>                    
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col-12 main-container__social-medias">
                         <div class="row">
@@ -96,205 +81,29 @@
                 </div>
             </div>
             <div class="col-md-9 col-sm-12 user-posts__main-container">
-                <div class="main-container__all-posts">
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
+                <div class="main-container__all-posts row">
+                    {% for i in user_posts %}
+                    <div class="all-posts__single-post col-md-4">
+                        <a href="../posts/{{i.id}}">
+                            <div class="single-post--image" style="background-image: url({{i.image.url}});">
+                                <!-- <div class="image--original">
                                     <p class="white-color bold">Original</p>
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                         <div class="container">
                             <div class="single-post--description row">
                                 <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
+                                    <h5 class="bold">{{i.post_name}}</h5>
                                 </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
+                                <div class="col-4 description--like-save actions">
+                                    <i class="fas fa-bookmark description--save actions__save"></i>
+                                    <i class="fas fa-heart description--like actions__like"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="all-posts__single-post">
-                        <a href="view_post.html">
-                            <div class="single-post--image">
-                                <img src="static/img/index/art.png" alt="">
-                                <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="container">
-                            <div class="single-post--description row">
-                                <div class="col-8 description--names">
-                                    <h5 class="bold">Abstract art</h5>
-                                    <p>by Aakriti Maharjan</p>
-                                </div>
-                                <div class="col-4 description--like-save">
-                                    <i class="fas fa-bookmark description--save"></i>
-                                    <i class="fas fa-heart description--like"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>                
             </div>
         </div>
@@ -302,5 +111,4 @@
 
     <script src="static/js/load_components.js"></script>
     <script src="static/js/main.js"></script>
-</body>
-</html>
+{% endblock %}
