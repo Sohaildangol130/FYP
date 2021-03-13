@@ -5,7 +5,7 @@
     
     <div class="contents__main-container row">
         {% for post in object_list %}
-        <div class="contents__main-container__content content--original col-lg-3 col-md-6 col-sm-12">
+        <div class="contents__main-container__content content--original col-lg-3 col-md-6 col-sm-12" style="margin-top:30px">
             <a href="posts/{{post.id}}">
                 <div class="content--image" style="background-image: url({{post.image.url}});">
                     <!-- <div class="content--image--original">
