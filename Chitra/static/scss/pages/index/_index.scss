@@ -48,45 +48,6 @@ $ratio: $height/$width;
     padding-right: 0px;
 }
 
-.content--description--like-save{
-    i{
-        color: $primary-white;
-        font-size: 22px;
-        float: right;
-        margin: 10px 0 0 20px;
-        transition: 0.3s all;
-        cursor: pointer;
-    }    
-}
-
-.content--description--save{
-    -webkit-text-stroke: 1px $primary-green;
-}
-
-.content--description--like{
-    -webkit-text-stroke: 1px $primary-red;        
-}
-
-.content--description--like:hover, .content--description--save:hover{
-    transform: scale(0.9, 0.9);
-}
-
-.content--description--like:hover{
-    color: $primary-red-hover;
-}
-
-.content--description--save:hover{
-    color: $primary-green-hover;
-}
-
-.content--description--like--checked{
-    animation: like_animation .5s 1 forwards;
-}
-
-.content--description--save--checked{
-    animation: save_animation .5s 1 forwards;    
-}
-
 @media only screen and (max-width:768px){
     .contents__main-container{
         padding: 20px;
@@ -97,37 +58,5 @@ $ratio: $height/$width;
     .contents__main-container{
         padding: 10px;
         grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    }
-}
-
-@keyframes like_animation{
-    0%{
-        transform: scale(0.9, 0.9);
-        color: $primary-red-hover;
-    }
-    50%{
-        transform: scale(1.2, 1.2);
-        color: $primary-red;
-
-    }
-    100%{
-        transform: scale(1, 1);
-        color: $primary-red;
-    }
-}
-
-@keyframes save_animation{
-    0%{
-        transform: scale(0.9, 0.9);
-        color: $primary-green-hover;
-    }
-    50%{
-        transform: scale(1.2, 1.2);
-        color: $primary-green;
-
-    }
-    100%{
-        transform: scale(1, 1);
-        color: $primary-green;
     }
 }

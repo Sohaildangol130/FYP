@@ -1,0 +1,104 @@
+.actions{
+    i{
+        color: $primary-white;
+        font-size: 22px;
+        float: right;
+        margin: 10px 0 0 20px;
+        transition: 0.3s all;
+        cursor: pointer;
+    }    
+}
+
+.post__like-comment-share{
+    display: flex;
+    align-items: center;
+    i{
+        float: unset;
+        margin: 10px 20px 0 0;
+    }
+}
+
+.actions__save{
+    -webkit-text-stroke: 1px $primary-green;
+    &:hover{
+        color: $primary-green-hover;
+    }
+}
+
+.actions__comment{
+    -webkit-text-stroke: 1px $primary-grey;
+    &:hover{
+        color: $primary-grey-hover;
+    }
+}
+
+.actions__like{
+    -webkit-text-stroke: 1px $primary-red;    
+    &:hover{
+        color: $primary-red-hover;
+    }    
+}
+
+.actions__like:hover, .actions__save:hover{
+    transform: scale(0.9, 0.9);
+}
+
+.actions__like--checked{
+    animation: like_animation .5s 1 forwards;
+}
+
+.actions__comment--checked{
+    animation: comment_animation .5s 1 forwards;
+}
+
+.actions__save--checked{
+    animation: save_animation .5s 1 forwards;    
+}
+
+@keyframes like_animation{
+    0%{
+        transform: scale(0.9, 0.9);
+        color: $primary-red-hover;
+    }
+    50%{
+        transform: scale(1.2, 1.2);
+        color: $primary-red;
+
+    }
+    100%{
+        transform: scale(1, 1);
+        color: $primary-red;
+    }
+}
+
+@keyframes comment_animation{
+    0%{
+        transform: scale(0.9, 0.9);
+        color: $primary-grey-hover;
+    }
+    50%{
+        transform: scale(1.2, 1.2);
+        color: $primary-grey;
+
+    }
+    100%{
+        transform: scale(1, 1);
+        color: $primary-grey;
+    }
+}
+
+@keyframes save_animation{
+    0%{
+        transform: scale(0.9, 0.9);
+        color: $primary-green-hover;
+    }
+    50%{
+        transform: scale(1.2, 1.2);
+        color: $primary-green;
+
+    }
+    100%{
+        transform: scale(1, 1);
+        color: $primary-green;
+    }
+}
