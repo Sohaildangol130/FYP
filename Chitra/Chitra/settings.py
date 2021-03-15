@@ -27,6 +27,7 @@ SECRET_KEY = '$o*(wc=_$w$io^8s+30k@-amlt$n9irv9#3#0a%zmehbpd*(_v'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+APPEND_SLASH=False
 
 
 # Application definition
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'home',
     'authentication',
     'posts',
-    'user_profile'
+    'user_profile',
+    'checkout'
 ]
 
 MIDDLEWARE = [

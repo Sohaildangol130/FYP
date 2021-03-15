@@ -16,19 +16,28 @@ $('.profile-btn').click(function(){
 
 
 let items = Cookies.get("items") == undefined ? []:JSON.parse(Cookies.get("items"));
-console.log(items)
+
 if(items.length > 0){
     $('.checkout--total-items-number').removeClass('display-none');
     $('.checkout--total-items-number p').text(items.length);
 }
 
-$(".post__buy").on('click',()=>{
+$(".post__buy").on('click',(e)=>{
+    e.preventDefault(); 
     if (!items.includes($(".post__buy").data("id"))){
         items.push($(".post__buy").data("id"));
         Cookies.set("items", items)
         $('.checkout--total-items-number').removeClass('display-none');
         $('.checkout--total-items-number p').text(items.length);
     }
+
+    $.ajax({
+        type: "POST",
+        url: "/checkout/",
+        success: () => {
+            console.log(`${items}`)
+        }
+    })
 })
 
 // nav-buttons working only one at a time
