@@ -7,10 +7,8 @@ from checkout.api.serializers import PostsSerializer
 
 @api_view(['GET'])
 def api_detail_checkout_view(request, slug):
-
     try:
         checkout = all_posts.objects.get(id=slug)
-        print(checkout)
     except all_posts.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 

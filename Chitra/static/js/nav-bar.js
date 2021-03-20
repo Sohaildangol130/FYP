@@ -14,6 +14,27 @@ $('.profile-btn').click(function(){
     $('.nav-item--profile-box').toggleClass('display-block');
 })
 
+const display_checkout_items = () => {
+    $.ajax({
+        type: "POST",
+        url: "/checkout/",
+        data: {'items': items},
+        datatype: 'json',
+        success: (data) => {
+            $('.nav-item--checkout-box__container__all-checkout-items').empty();
+            $.each(data, (key, value)=>{
+                value.forEach(element => {
+                    var post_price = "Rs 2000";
+                    $('.nav-item--checkout-box__container__all-checkout-items').prepend( 
+                        
+                        "<div class='nav-item--checkout-box__container__all-checkout-items--checkout-item col-lg-12'><div class='row align-items-center'><div class='col-4'><img class='checkout-item--photo' src='../media/"+element.img_url+"'></div><div class='col-8'><h6 class='checkout-item--name'>"+element.post_title+"</h6><p class='checkout-item--price'>"+post_price+"</p></div></div></div>" 
+                    );
+                });
+            })
+            
+        }
+    })
+}
 
 let items = Cookies.get("items") == undefined ? []:JSON.parse(Cookies.get("items"));
 
@@ -21,6 +42,22 @@ if(items.length > 0){
     $('.checkout--total-items-number').removeClass('display-none');
     $('.checkout--total-items-number p').text(items.length);
 }
+
+display_checkout_items();
+// var csrftoken = $.cookie('csrftoken');
+
+// function csrfSafeMethod(method) {
+//     // these HTTP methods do not require CSRF protection
+//     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+// }
+
+// $.ajaxSetup({
+//     beforeSend: function(xhr, settings) {
+//         if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+//             xhr.setRequestHeader("X-CSRFToken", csrftoken);
+//         }
+//     }
+// });
 
 $(".post__buy").on('click',(e)=>{
     e.preventDefault(); 
@@ -31,13 +68,7 @@ $(".post__buy").on('click',(e)=>{
         $('.checkout--total-items-number p').text(items.length);
     }
 
-    $.ajax({
-        type: "POST",
-        url: "/checkout/",
-        success: () => {
-            console.log(`${items}`)
-        }
-    })
+    display_checkout_items();
 })
 
 // nav-buttons working only one at a time

@@ -5,7 +5,6 @@ from django.core.files.storage import FileSystemStorage
 # Create your views here.
 def view_post(request, id):
     post = all_posts.objects.filter(id=id)
-    print(post)
     return render (request, 'view_post.html', {'post': post})
 
 def upload_post(request):
