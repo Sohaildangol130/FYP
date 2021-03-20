@@ -12,9 +12,10 @@ def upload_post(request):
         post_name = request.POST['post_name']
         description = request.POST['description']
         image = request.FILES['image']
+        price = request.POST['price']
         if request.user.is_authenticated:
             user = request.user
-            post = all_posts(post_name=post_name, description=description, image=image, user=user)
+            post = all_posts(post_name=post_name, description=description, image=image, user=user, price=price)
             post.save()
             return redirect('/')
         

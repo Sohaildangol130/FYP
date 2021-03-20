@@ -81,7 +81,7 @@ a {
   font-weight: 700;
 }
 
-input[type=text], input[type=password], input[type=email], textarea {
+input[type=text], input[type=password], input[type=email], input[type=number], textarea {
   margin-top: 5px;
   padding: 10px;
   border-radius: 5px;
@@ -930,10 +930,6 @@ hr {
 .main-container__hr {
   margin: 60px 0;
   border-top: 1px #C2C2C2 solid;
-}
-
-.sell-art__heading {
-  text-align: center;
 }
 
 .sell-art__art-type {
