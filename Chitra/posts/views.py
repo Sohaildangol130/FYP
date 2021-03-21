@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import all_posts
-from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 def view_post(request, id):

@@ -35,10 +35,7 @@
                         <div class="col-md-6">
                             <div class="post__price-buy">
                                 <h5 class="post__price">Rs {{i.price}}</h5>
-                                <!-- <form action="../checkout" method="post">
-                                    {% csrf_token %} -->
-                                    <button class="post__buy" data-id="{{i.id}}"><p>Add to cart</p></button>
-                                <!-- </form> -->
+                                <button class="post__buy" data-id="{{i.id}}"><p>Add to cart</p></button>
                             </div>  
                         </div>                            
                     </div>
@@ -53,7 +50,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-12 post__line">
                     <hr>
                 </div>
@@ -67,17 +64,17 @@
                 <div class="col-12">
                     <div class="comments__add-comment row">
                         <div class="col-md-1">
-                        <div class="user-description__profile-picture"></div>
-
+                            <div class="user-description__profile-picture"></div>
                         </div>
                         <div class="col-md-11">
-                            <textarea name="" id="" class="comments__comment-description" placeholder="Write some comments over here..."></textarea>
-                            <button class="comments__comment-button"><p>Comment</p></button>
+                            <input type="hidden" class="post_id" value="{{i.id}}">
+                            <input type="hidden" class="user_id" value="{{i.user.id}}">
+                            <textarea name="comment" id="" class="comments__comment-description" placeholder="Write some comments over here..."></textarea>
+                            <button class="comments__comment-button"><p>Comment</p></button>                          
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="post__all-comments row">
                 <div class="col-12">
                     <div class="post__comment row">
@@ -139,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="col-md-2 col-sm-0"></div>
     </div>
