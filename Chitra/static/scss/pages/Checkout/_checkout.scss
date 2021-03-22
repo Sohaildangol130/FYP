@@ -1,0 +1,29 @@
+.checkout__main-container{
+    @mixin m-top-10{
+        margin-top: 10px;
+    }
+    @mixin m-top-30{
+        margin-top: 30px;
+    }
+    .main-container__checkout-form{
+        .checkout-form__user-details, .checkout-form__user-address, .checkout-form__note{
+            @include m-top-30;
+        }
+        .checkout-form__complete-checkout{
+            @include m-top-10;
+        }
+        .checkout-form__user-details{
+            .user-details__first-name, .user-details__last-name{
+                @include m-top-10;
+            }
+        }
+        .checkout-form__user-address{
+            .user-address__zone, .user-address__state, .user-address__city, .user-address__zip-code{
+                @include m-top-10;
+            }
+        }
+    }
+    .main-container__checkout-items{
+
+    }
+}

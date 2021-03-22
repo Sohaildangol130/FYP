@@ -17,17 +17,15 @@ $('.profile-btn').click(function(){
 const display_checkout_items = () => {
     $.ajax({
         type: "POST",
-        url: "/checkout/",
+        url: "/checkout/show",
         data: {'items': items},
         datatype: 'json',
         success: (data) => {
             $('.nav-item--checkout-box__container__all-checkout-items').empty();
             $.each(data, (key, value)=>{
                 value.forEach(element => {
-                    var post_price = "Rs 2000";
-                    $('.nav-item--checkout-box__container__all-checkout-items').prepend( 
-                        
-                        "<div class='nav-item--checkout-box__container__all-checkout-items--checkout-item col-lg-12'><div class='row align-items-center'><div class='col-4'><img class='checkout-item--photo' src='../media/"+element.img_url+"'></div><div class='col-8'><h6 class='checkout-item--name'>"+element.post_title+"</h6><p class='checkout-item--price'>"+post_price+"</p></div></div></div>" 
+                    $('.nav-item--checkout-box__container__all-checkout-items').prepend(
+                        "<div class='nav-item--checkout-box__container__all-checkout-items--checkout-item col-lg-12'><div class='row align-items-center'><div class='col-4'><img class='checkout-item--photo' src='../media/"+element.img_url+"'></div><div class='col-8'><h6 class='checkout-item--name'>"+element.post_title+"</h6><p class='checkout-item--price'>Rs "+element.price+"</p></div></div></div>" 
                     );
                 });
             })
@@ -44,6 +42,7 @@ if(items.length > 0){
 }
 
 display_checkout_items();
+
 // var csrftoken = $.cookie('csrftoken');
 
 // function csrfSafeMethod(method) {

@@ -1045,4 +1045,20 @@ hr {
             justify-content: flex-start;
   }
 }
+
+.checkout__main-container .main-container__checkout-form .checkout-form__user-details, .checkout__main-container .main-container__checkout-form .checkout-form__user-address, .checkout__main-container .main-container__checkout-form .checkout-form__note {
+  margin-top: 30px;
+}
+
+.checkout__main-container .main-container__checkout-form .checkout-form__complete-checkout {
+  margin-top: 10px;
+}
+
+.checkout__main-container .main-container__checkout-form .checkout-form__user-details .user-details__first-name, .checkout__main-container .main-container__checkout-form .checkout-form__user-details .user-details__last-name {
+  margin-top: 10px;
+}
+
+.checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__zone, .checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__state, .checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__city, .checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__zip-code {
+  margin-top: 10px;
+}
 /*# sourceMappingURL=main.css.map */

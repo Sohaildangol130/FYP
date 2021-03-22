@@ -1,0 +1,64 @@
+{% extends 'layouts/application.html' %}
+{% load static %}
+{% block body %}
+<div class="checkout__main-container container-fluid" style='padding: 30px'>
+    <div class="row">
+        <form class="main-container__checkout-form col-md-8" action="" method="post">
+            <h2>Payment process</h3>
+            <div class="checkout-form__user-details">
+                <h4>User details</h4>
+                <div class="row">
+                    <div class="col-md-6 user-details__first-name">
+                        <p>First name</p>
+                        <input type="text" name="first-name" value="{{user.first_name}}">
+                    </div>
+                    <div class="col-md-6 user-details__last-name">
+                        <p>Last name</p>
+                        <input type="text" name="last-name" value="{{user.last_name}}">
+                    </div>
+                </div>
+            </div>
+            <div class="checkout-form__user-address">
+                <h4>Delivery address</h4>
+                <div class="row">
+                    <div class="col-md-3 user-address__zone">
+                        <p>Zone</p>
+                        <input type="text" name="zone">
+                    </div>
+                    <div class="col-md-3 user-address__state">
+                        <p>State</p>
+                        <input type="text" name="state">
+                    </div>
+                    <div class="col-md-3 user-address__city">
+                        <p>City</p>
+                        <input type="text" name="city">
+                    </div>                    
+                    <div class="col-md-3 user-address__zip-code">
+                        <p>Zip code</p>
+                        <input type="text" name="zip-code">
+                    </div>
+                </div>
+            </div>
+            <div class="checkout-form__note">
+                <p class="bold">The payment will be done on delivery. We'll give you regular call updates on your delivery status. Keep your cash ready!!</p>
+            </div>
+            <div class="checkout-form__complete-checkout">
+                <button type="submit"><p>Complete checkout</p></button>
+            </div>
+        </form>
+        <div class="main-container__checkout-items col-md-4">
+            <h4>Checkout Summary</h4>
+            <div class="checkout-items__container">
+            </div>
+            <div class="checkout-items__total-price row justify-content-end">
+                <div class="col-2 total-price__heading">
+                    <h6>Total:</h6>
+                </div>
+                <div class="col-3 total-price__price">
+                    <p style='text-align: right'></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
