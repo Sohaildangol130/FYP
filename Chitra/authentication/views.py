@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-import random
+import random, string
+from django.core.mail import send_mail
+
 # Create your views here.
 def login(request):
     if request.method == "POST":
@@ -17,7 +19,6 @@ def login(request):
                 return render(request, 'login.html')         
     else:
         return render(request, 'login.html')
-
 
 def signup(request):
     if request.method == 'POST':
@@ -39,6 +40,31 @@ def signup(request):
         return redirect ('/')
     else:
         return render(request, 'register.html')
+
+def reset_password(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        user = User.objects.get(email=email)
+        if (user):
+            letters = string.ascii_uppercase
+            new_password = ''.join(random.choice(letters) for i in range(10))
+            print(new_password)
+            user.set_password(new_password)
+            user.save()
+            send_mail(
+            'RESET PASSWORD',
+            'Your new password: ' + new_password,
+            'chitra.fyp@gmail.com',
+            [email],
+            fail_silently=False
+            )
+            return redirect('/auth/login')
+        else:
+            messages.info(request, "Oops!! We don't have any account registered with that email.")
+            return render(request, 'forget_password.html')
+
+    else:
+        return render(request, 'forget_password.html')
 
 def logout(request):
     auth.logout(request)
