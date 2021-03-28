@@ -28,7 +28,7 @@ const display_checkout_items = () => {
             $.each(data, (key, value)=>{
                 value.forEach(element => {
                     $('.nav-item--checkout-box__container__all-checkout-items').prepend(
-                        "<div class='nav-item--checkout-box__container__all-checkout-items--checkout-item col-lg-12'><div class='row align-items-center'><div class='col-4'><img class='checkout-item--photo' src='../media/"+element.img_url+"'></div><div class='col-8'><h6 class='checkout-item--name'>"+element.post_title+"</h6><p class='checkout-item--price'>Rs "+element.price+"</p></div></div></div>" 
+                        `<div class='nav-item--checkout-box__container__all-checkout-items--checkout-item col-lg-12'><div class='row align-items-center'><div class='col-4'><a href="/posts/`+element.post_id+`"><img class='checkout-item--photo' src='../media/`+element.img_url+`'></a></div><div class='col-8'><a href="/posts/`+element.post_id+`"><h6 class='checkout-item--name'>`+element.post_title+`</h6></a><p class='checkout-item--price'>Rs `+element.price+`</p></div></div></div>` 
                     );
                 });
             })

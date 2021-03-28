@@ -12,7 +12,9 @@ const checkout = () => {
                     $('.checkout-items__container').prepend(
                         `<div class="container__single-item row" style="margin-top: 30px;">
                         <div class="single-item__image col-3">
-                            <div class="image__container" style="width:100%; background-size: cover; background-position: center; height: 75px; background-image: url('/media/`+element.img_url+`')"></div>
+                            <a href="/posts/`+element.post_id+`">
+                                <div class="image__container" style="width:100%; background-size: cover; background-position: center; height: 75px; background-image: url('/media/`+element.img_url+`')"></div>
+                            </a>
                         </div>
                         <div class="col-6">
                             <div class="single-item__name"><a href="/posts/`+element.post_id+`"><h5>`+element.post_title+`</h5></a></div>

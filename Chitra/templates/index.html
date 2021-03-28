@@ -27,7 +27,7 @@
                 <div class="content--description row" style="margin-top: 5px">
                     <div class="col-8 content--description--names">
                         <h5 class="bold">{{post.post_name}}</h5>
-                        <p>by {{post.user.first_name}} {{post.user.last_name}}</p>
+                        <a href="/profile/{{post.user.id}}"><p>by {{post.user.first_name}} {{post.user.last_name}}</p></a>
                     </div>
                     <div class="col-4 content--description--like-save actions">
                         <!-- <i class="fas fa-bookmark actions__save"></i>
