@@ -1,11 +1,34 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from posts.models import all_posts
+from .models import checkout
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 
-def checkout(request):
-    return render(request, 'checkout.html')
+def order(request):
+    if request.method == 'POST':
+        chars = "[]"
+        posts = request.POST['posts']
+        phone_number = request.POST['phone_number']
+        zone = request.POST['zone']
+        city = request.POST['city']
+        state = request.POST['state']
+        zip_code = request.POST['zip_code']
+        for c in chars:
+            posts = posts.replace(c, '')
+            products = posts.split(',')
+        if request.user.is_authenticated:
+            user = request.user
+            for i in products:
+                product_details = all_posts.objects.get(id=int(i))
+                order = checkout(product=product_details, user=user, phone_number=phone_number, zone=zone, state=state, city=city, zip_code=zip_code )
+                order.save()
+        response = HttpResponseRedirect('/')
+        response.delete_cookie('items')
+        return response
+    else:
+        return render(request, 'checkout.html')
 
 @csrf_exempt
 def items_display(request):

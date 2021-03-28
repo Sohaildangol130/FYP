@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 import random, string
 from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def login(request):
@@ -67,5 +68,7 @@ def reset_password(request):
         return render(request, 'forget_password.html')
 
 def logout(request):
+    response = HttpResponseRedirect('/auth/login')
+    response.delete_cookie('items')
     auth.logout(request)
-    return redirect('/')
+    return response

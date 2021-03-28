@@ -5,7 +5,8 @@ const checkout = () => {
         data: {'items': items},
         datatype: 'json',
         success: (data) => {
-            var a = 0;
+            $('.input__all-posts').val(Cookies.get("items"))
+            var price = 0;
             $.each(data, (key, value)=>{
                 value.forEach(element => {
                     $('.checkout-items__container').prepend(
@@ -22,9 +23,9 @@ const checkout = () => {
                         </div>
                         </div>`
                     );
-                    a = a+ parseInt(element.price)
+                    price = price+ parseInt(element.price)
                 });
-                $('.total-price__price p').text("Rs "+a);
+                $('.total-price__price p').text("Rs "+price);
             })            
         }
     })

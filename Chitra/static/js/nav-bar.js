@@ -21,6 +21,9 @@ const display_checkout_items = () => {
         data: {'items': items},
         datatype: 'json',
         success: (data) => {
+            if(items.includes($(".post__buy").data("id"))){
+                $('.post__buy p').text("Added to cart!!");
+            }
             $('.nav-item--checkout-box__container__all-checkout-items').empty();
             $.each(data, (key, value)=>{
                 value.forEach(element => {
@@ -68,6 +71,7 @@ $(".post__buy").on('click',(e)=>{
     }
 
     display_checkout_items();
+    $('.post__buy p').text("Added to cart!!")
 })
 
 // nav-buttons working only one at a time
