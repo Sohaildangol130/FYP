@@ -123,17 +123,32 @@ hr {
   width: 100%;
 }
 
-.error__alert {
+.message {
   padding: 10px;
-  background-color: #ffcccc;
   border-radius: 7px;
-  border: 1px solid #ff9999;
   margin-top: 30px;
 }
 
-.error__alert p {
-  color: red;
+.message p {
   font-weight: 700;
+}
+
+.message--error {
+  background-color: #ffcccc;
+  border: 1px solid #ff9999;
+}
+
+.message--error p {
+  color: #990000;
+}
+
+.message--success {
+  background-color: #ccffdd;
+  border: 1px solid #99ffbb;
+}
+
+.message--success p {
+  color: #009933;
 }
 
 .actions i {

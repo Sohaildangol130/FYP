@@ -6,6 +6,17 @@
         <form class="main-container__checkout-form col-md-8" action="/checkout/" method="post">
             {% csrf_token %}
             <h2>Payment process</h3>
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="message message--error">
+                    <p>{{message}}</p>                        
+                </div>       
+                {% else %}
+                <div class="message message--success">
+                    <p>{{message}}</p>                      
+                </div>  
+                {% endif %}
+            {% endfor %}
             <div class="checkout-form__user-details">
                 <h4>User details</h4>
                 <div class="row">
@@ -61,7 +72,7 @@
                     <h6>Total:</h6>
                 </div>
                 <div class="col-3 total-price__price">
-                    <p style='text-align: right'></p>
+                    <p class="bold" style='text-align: right'></p>
                 </div>
             </div>
         </div>

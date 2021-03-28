@@ -10,9 +10,15 @@
                 </div>
                 
                 {% for message in messages %}
-                    <div class="error__alert">
-                        <p>{{message}}</p>
-                    </div>                    
+                    {% if message.tags == "error" %}
+                    <div class="message message--error">
+                        <p>{{message}}</p>                        
+                    </div>       
+                    {% else %}
+                    <div class="message message--success">
+                        <p>{{message}}</p>                      
+                    </div>  
+                    {% endif %}
                 {% endfor %}
                 <form class="login-page__login-form" action="login" method="POST">
                     {% csrf_token %}

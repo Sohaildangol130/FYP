@@ -16,7 +16,7 @@ def login(request):
                 auth.login(request, user)
                 return redirect('/')
             else:
-                messages.info(request, "Username or password is incorrect.")
+                messages.error(request, "Username or password is incorrect.")
                 return render(request, 'login.html')         
     else:
         return render(request, 'login.html')
@@ -30,10 +30,10 @@ def signup(request):
         repassword = request.POST['re_password']
         
         if (User.objects.filter(email=email).exists()):
-            messages.info(request, "The email is already taken. Please try logging in with it.")
+            messages.error(request, "The email is already taken. Please try logging in with it.")
             return render(request, 'register.html')
         elif (password != repassword):
-            messages.info(request, "The passwords do not match. Please try it again.")
+            messages.error(request, "The passwords do not match. Please try it again.")
             return render(request, 'register.html')
         else:
             user = User.objects.create_user(username=first_name + str(random.randint(0,99999)), first_name=first_name, last_name=last_name, email=email, password=password)
@@ -45,11 +45,10 @@ def signup(request):
 def reset_password(request):
     if request.method == "POST":
         email = request.POST['email']
-        user = User.objects.get(email=email)
-        if (user):
+        if (User.objects.filter(email=email)):
             letters = string.ascii_uppercase
             new_password = ''.join(random.choice(letters) for i in range(10))
-            print(new_password)
+            user = User.objects.get(email=email)
             user.set_password(new_password)
             user.save()
             send_mail(
@@ -59,9 +58,10 @@ def reset_password(request):
             [email],
             fail_silently=False
             )
+            messages.success(request, "Please check your email. We've sent a temporary password for you.")
             return redirect('/auth/login')
         else:
-            messages.info(request, "Oops!! We don't have any account registered with that email.")
+            messages.error(request, "Oops!! We don't have any account registered with that email.")
             return render(request, 'forget_password.html')
 
     else:
