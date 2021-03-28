@@ -851,6 +851,7 @@ hr {
 #profile-page .user-posts__main-container .description--names, #profile-page .user-posts__main-container .description--like-save {
   padding-left: 0px;
   padding-right: 0px;
+  float: right;
 }
 
 @media only screen and (max-width: 768px) {

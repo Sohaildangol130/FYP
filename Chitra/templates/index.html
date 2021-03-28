@@ -14,14 +14,15 @@
                 </div>
             </a>
             <div class="container-fluid">
-                <div class="content--description row">
+                <div class="content--description row" style="margin-top: 5px">
                     <div class="col-8 content--description--names">
                         <h5 class="bold">{{post.post_name}}</h5>
                         <p>by {{post.user.first_name}} {{post.user.last_name}}</p>
                     </div>
                     <div class="col-4 content--description--like-save actions">
-                        <i class="fas fa-bookmark actions__save"></i>
-                        <i class="fas fa-heart actions__like"></i>
+                        <!-- <i class="fas fa-bookmark actions__save"></i>
+                        <i class="fas fa-heart actions__like"></i> -->
+                        <h6 style="text-align: right;">Rs {{post.price}}</h6>
                     </div>
                 </div>
             </div>
