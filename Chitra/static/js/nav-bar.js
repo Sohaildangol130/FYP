@@ -62,16 +62,18 @@ display_checkout_items();
 // });
 
 $(".post__buy").on('click',(e)=>{
-    e.preventDefault(); 
-    if (!items.includes($(".post__buy").data("id"))){
-        items.push($(".post__buy").data("id"));
-        Cookies.set("items", items)
-        $('.checkout--total-items-number').removeClass('display-none');
-        $('.checkout--total-items-number p').text(items.length);
-    }
+    if ($(".post__buy").data("id")){
+        e.preventDefault(); 
+        if (!items.includes($(".post__buy").data("id"))){
+            items.push($(".post__buy").data("id"));
+            Cookies.set("items", items)
+            $('.checkout--total-items-number').removeClass('display-none');
+            $('.checkout--total-items-number p').text(items.length);
+        }
 
-    display_checkout_items();
-    $('.post__buy p').text("Added to cart!!")
+        display_checkout_items();
+        $('.post__buy p').text("Added to cart!!")
+        }
 })
 
 // nav-buttons working only one at a time

@@ -63,7 +63,6 @@ def reset_password(request):
         else:
             messages.error(request, "Oops!! We don't have any account registered with that email.")
             return render(request, 'forget_password.html')
-
     else:
         return render(request, 'forget_password.html')
 
