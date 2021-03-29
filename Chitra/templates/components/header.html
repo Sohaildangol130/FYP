@@ -11,7 +11,7 @@
                     {% if user.is_authenticated %}
                     <div class="all-nav-items__user">
                         <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--search-bar">
-                            <form>
+                            <form action="/search" method="GET">
                                 <input type="text" name="search" placeholder="Search..">
                             </form>
                         </li>
