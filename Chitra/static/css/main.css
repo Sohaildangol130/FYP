@@ -23,15 +23,15 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1, h2, h3 {
-  color: #2a2a2a;
+  color: #1a1a1a;
 }
 
 h4, h5, h6 {
-  color: #545454;
+  color: #2e2e2e;
 }
 
 p {
-  color: #545454;
+  color: #404040;
 }
 
 h1 {
@@ -106,7 +106,11 @@ button {
   border: none;
   padding: 15px 20px;
   border-radius: 5px;
-  background-color: #141414;
+  background-color: #522cfc;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  cursor: pointer;
+  outline: none;
 }
 
 button p {
@@ -116,6 +120,10 @@ button p {
 button i {
   font-size: 16px;
   margin-left: 15px;
+}
+
+button:hover {
+  background-color: #3922a0;
 }
 
 hr {
@@ -192,11 +200,11 @@ hr {
 }
 
 .actions__like {
-  -webkit-text-stroke: 1px #ff4e4e;
+  -webkit-text-stroke: 1px #ff2929;
 }
 
 .actions__like:hover {
-  color: #ff9c9c;
+  color: #c20000;
 }
 
 .actions__like:hover, .actions__save:hover {
@@ -223,17 +231,17 @@ hr {
   0% {
     -webkit-transform: scale(0.9, 0.9);
             transform: scale(0.9, 0.9);
-    color: #ff9c9c;
+    color: #c20000;
   }
   50% {
     -webkit-transform: scale(1.2, 1.2);
             transform: scale(1.2, 1.2);
-    color: #ff4e4e;
+    color: #ff2929;
   }
   100% {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
-    color: #ff4e4e;
+    color: #ff2929;
   }
 }
 
@@ -241,17 +249,17 @@ hr {
   0% {
     -webkit-transform: scale(0.9, 0.9);
             transform: scale(0.9, 0.9);
-    color: #ff9c9c;
+    color: #c20000;
   }
   50% {
     -webkit-transform: scale(1.2, 1.2);
             transform: scale(1.2, 1.2);
-    color: #ff4e4e;
+    color: #ff2929;
   }
   100% {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
-    color: #ff4e4e;
+    color: #ff2929;
   }
 }
 
@@ -358,6 +366,10 @@ hr {
   position: relative;
 }
 
+.header__nav-bar--all-nav-items--item .nav-item {
+  cursor: pointer;
+}
+
 .header__nav-bar--all-nav-items--item--search-bar input {
   border-radius: 5px;
   border: 0.5px #C2C2C2 solid;
@@ -375,11 +387,11 @@ hr {
 }
 
 .notification-item--like-icon {
-  color: #ff4e4e;
+  color: #ff2929;
 }
 
 .notification-item--follow-icon {
-  color: #2a2a2a;
+  color: #1a1a1a;
 }
 
 .nav-item--notification-box {
@@ -403,7 +415,7 @@ hr {
 }
 
 .checkout--total-items-number {
-  background-color: #ff4e4e;
+  background-color: #ff2929;
   height: 15px;
   width: 15px;
   padding: 10px;
@@ -420,6 +432,10 @@ hr {
   position: absolute;
   top: -10px;
   left: 15px;
+}
+
+.header__nav-bar--all-nav-items--item--checkout .nav-item {
+  color: #404040;
 }
 
 .nav-item--checkout-box {
@@ -467,6 +483,13 @@ hr {
 .nav-item--profile-box .logout {
   margin-bottom: 0;
   width: 100%;
+  background-color: #ff2929;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.nav-item--profile-box .logout:hover {
+  background-color: #c20000;
 }
 
 .display-none {
@@ -481,7 +504,7 @@ hr {
   height: 32px;
   width: 32px;
   border-radius: 50%;
-  background-color: #2a2a2a;
+  background-color: #eae6ff;
 }
 
 .nav-item--mobile-burger {
@@ -563,7 +586,7 @@ hr {
 }
 
 .content--image--original {
-  background-color: #2a2a2a;
+  background-color: #1a1a1a;
   padding: 15px 20px;
   position: absolute;
   bottom: 4px;
@@ -795,7 +818,7 @@ hr {
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  background-color: #2a2a2a;
+  background-color: #eae6ff;
 }
 
 #profile-page .user-details__main-container .main-container__user-name-and-location {
@@ -839,6 +862,22 @@ hr {
   margin-right: 30px;
 }
 
+#profile-page .user-details__main-container .social-medias--all-links__facebook {
+  color: #2a3fff;
+}
+
+#profile-page .user-details__main-container .social-medias--all-links__instagram {
+  color: #ff6c98;
+}
+
+#profile-page .user-details__main-container .social-medias--all-links__behance {
+  color: #1125d8;
+}
+
+#profile-page .user-details__main-container .social-medias--all-links__linkedin {
+  color: #4067d1;
+}
+
 #profile-page .user-posts__main-container .main-container__all-posts {
   padding: 50px;
 }
@@ -856,7 +895,7 @@ hr {
 }
 
 #profile-page .user-posts__main-container .image--original {
-  background-color: #2a2a2a;
+  background-color: #1a1a1a;
   padding: 15px 20px;
   position: absolute;
   bottom: 4px;
@@ -1001,7 +1040,7 @@ hr {
   height: 58px;
   width: 58px;
   border-radius: 50%;
-  background-color: #2a2a2a;
+  background-color: #eae6ff;
   margin-right: 20px;
 }
 

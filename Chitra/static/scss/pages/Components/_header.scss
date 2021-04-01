@@ -17,6 +17,9 @@
     margin-left: 30px;
     font-size: 22px;
     position: relative;
+    .nav-item{
+        cursor: pointer;
+    }
 }
 
 .header__nav-bar--all-nav-items--item--search-bar{
@@ -80,6 +83,11 @@
     top: -10px;
     left: 15px;
 }
+.header__nav-bar--all-nav-items--item--checkout{
+    .nav-item{
+        color:$tertiary-color;
+    }
+}
 .nav-item--checkout-box
 {
     padding: 20px;
@@ -102,9 +110,6 @@
 .checkout-item--view-all{
     text-align: center;
     margin: 10px 0 0 0 ;
-    p{
-
-    }
 }
 
 .nav-item--profile-box
@@ -130,6 +135,11 @@
     .logout{
         margin-bottom: 0;
         width: 100%;
+        background-color: $primary-red;
+        transition: .5s all;
+        &:hover{
+            background-color: $primary-red-hover;
+        }
     }
 }
 
@@ -145,7 +155,7 @@
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    background-color: $primary-black;
+    background-color: $primary-color-faded;
 }
 
 .nav-item--mobile-burger{

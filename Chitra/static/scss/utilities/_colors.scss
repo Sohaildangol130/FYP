@@ -1,19 +1,24 @@
+//primary color
+$primary-color-faded: hsl(251, 97%, 95%);
+$primary-color: hsl(251, 97%, 58%);
+$primary-hover-color: hsl(251, 65%, 38%);
+
 //h1,h2,h3 color
-$primary-black: #2a2a2a;
+$primary-black: hsl(0, 0%, 10%);
 
 //h4,h5,h6 color
-$secondary-black: #545454;
+$secondary-black: hsl(0, 0%, 18%);
 
 //p color
-$tertiary-color: #545454;
+$tertiary-color: hsl(0, 0%, 25%);
 
 //placeholder color
 $placeholder-color: #CECECE;
 
 //secondary heading,p color
 $primary-white: #FFFFFF;
-$primary-red: #ff4e4e;
-$primary-red-hover: #ff9c9c;
+$primary-red: hsl(0, 100%, 58%);
+$primary-red-hover: hsl(0, 100%, 38%);
 
 $primary-green: #4eff95;
 $primary-green-hover: #9cffc4;
@@ -23,12 +28,6 @@ $primary-grey-hover: hsl(0, 0%, 60%);
 
 //border color
 $border-color: #C2C2C2;
-
-//button color
-// $primary-btn-color: hsl(15, 100%, 57%);
-$primary-btn-color: #141414;
-$primary-btn-hover-color: #141414;
-$primary-btn-text-color: #FFFFFF;
 
 .white-color{
     color: $primary-white;

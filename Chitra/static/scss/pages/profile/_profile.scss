@@ -2,59 +2,69 @@
     .user-details__main-container{
         padding: 50px;
         .main-container__profile-picture,
-    .main-container__follow-button
-    {
-        display: grid;
-        justify-content: center;
-    }
-    
-    .profile-picture{
-        height: 70px;
-        width: 70px;
-        border-radius: 50%;
-        background-color: $primary-black;
-    }
-    
-    .main-container__user-name-and-location{
-        margin-top: 20px;
-        text-align: center;
-    }
-    
-    .main-container__follow-button{
-        margin-top: 30px;
-    }
-    
-    .main-container__user-chitra-details{
-        margin-top: 30px;
-        padding: 20px 0;
-        border-top: 1px solid $border-color;
-    }
-    
-    .followers--total-followers,
-    .following--total-following,
-    .likes--total-likes,
-    .saves--total-saves{
-        text-align: right;
-    }
-    
-    .user-chitra-details--saves, 
-    .user-chitra-details--likes, 
-    .user-chitra-details--following{
-        margin-top: 20px;
-    }
-    
-    .main-container__social-medias{
-        padding: 20px 0;
-    }
-    
-    .social-medias--all-links{
-        margin-top: 10px;
-    }
-    
-    .social-medias--all-links i{
-        font-size: 22px;
-        margin-right: 30px;
-    }
+        .main-container__follow-button {
+            display: grid;
+            justify-content: center;
+        }
+        
+        .profile-picture{
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background-color: $primary-color-faded;
+        }
+        
+        .main-container__user-name-and-location{
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .main-container__follow-button{
+            margin-top: 30px;
+        }
+        
+        .main-container__user-chitra-details{
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid $border-color;
+        }
+        
+        .followers--total-followers,
+        .following--total-following,
+        .likes--total-likes,
+        .saves--total-saves{
+            text-align: right;
+        }
+        
+        .user-chitra-details--saves, 
+        .user-chitra-details--likes, 
+        .user-chitra-details--following{
+            margin-top: 20px;
+        }
+        
+        .main-container__social-medias{
+            padding: 20px 0;
+        }
+        
+        .social-medias--all-links{
+            margin-top: 10px;
+            i{
+                font-size: 22px;
+                margin-right: 30px;
+            }
+            &__facebook{
+                color: rgb(42, 63, 255);
+            }
+            &__instagram{
+                color: rgb(255, 108, 152);
+            }
+            &__behance{
+                color: rgb(17, 37, 216);
+            }
+            &__linkedin{
+                color: rgb(64, 103, 209);
+            }
+        }
     }
     
     .user-posts__main-container{

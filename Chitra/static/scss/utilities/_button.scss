@@ -2,15 +2,20 @@ button{
     border: none;
     padding: 15px 20px;
     border-radius: 5px;
-    background-color: $primary-btn-color;
+    background-color: $primary-color;
+    transition: 0.3s all;
+    cursor: pointer;
+    outline: none;
     p{
     @extend .bold;
 
-        color: $primary-btn-text-color;
+        color: $primary-white;
     }
-
     i{
         font-size: 16px;
         margin-left: 15px;
+    }
+    &:hover{
+        background-color: $primary-hover-color;
     }
 }
