@@ -1,3 +1,14 @@
+var id = $('.user_id').val();
+$.ajax({
+    type: "POST",
+    url: "/auth/header",
+    data: {'id': id},
+    datatype: 'json',
+    success: (data) => {
+        $('.nav-item--profile').css("background-image", "url(/media/"+data.user_image+")")
+    }
+})
+
 const toggle = (clicked_item, class_name, toggle_class) => {
     $(clicked_item).click(function(){
         $(class_name).toggleClass(toggle_class);

@@ -6,17 +6,22 @@
             <div class="col-md-3 col-sm-0 user-details__main-container">
                 <div class="row">
                     <div class="col-12 main-container__profile-picture">
-                        <div class="profile-picture">
+                        {% for i in secondary_details %}
+                        <div class="profile-picture"  style="background-image: url({{i.profile_picture.url}});">
 
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="row">
+                    {% for i in user_details%}
                     <div class="col-12 main-container__user-name-and-location">
                         <h4 class="bold">
-                            {{user.first_name}} {{user.last_name}}
+                            {{i.first_name}} {{i.last_name}}
                         </h4>
+                        <p>{{i.email}}</p>
                     </div>
+                    {% endfor %}
                 </div>
                 <!-- <div class="row">
                     <div class="col-12 main-container__follow-button">

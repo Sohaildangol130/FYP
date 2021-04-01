@@ -1,11 +1,23 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from user_profile.models import User_details
 import random, string
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
+
+@csrf_exempt
+def header(request):
+    user_details = User_details.objects.filter(user=int(request.POST.getlist('id')[0])).values_list()
+    print(request.POST.getlist('id')[0])
+    for i in user_details:
+        user_image = i[2]
+    return JsonResponse({'user_image': user_image}, safe=False)
+
 def login(request):
     if request.method == "POST":
         email = request.POST['email']

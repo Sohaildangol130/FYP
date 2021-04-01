@@ -505,6 +505,7 @@ hr {
   width: 32px;
   border-radius: 50%;
   background-color: #eae6ff;
+  background-size: cover;
 }
 
 .nav-item--mobile-burger {
@@ -819,6 +820,7 @@ hr {
   width: 70px;
   border-radius: 50%;
   background-color: #eae6ff;
+  background-size: cover;
 }
 
 #profile-page .user-details__main-container .main-container__user-name-and-location {
