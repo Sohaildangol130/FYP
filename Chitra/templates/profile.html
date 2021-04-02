@@ -13,23 +13,25 @@
                         {% endfor %}
                     </div>
                 </div>
+                {% for i in user_details%}
                 <div class="row">
-                    {% for i in user_details%}
                     <div class="col-12 main-container__user-name-and-location">
                         <h4 class="bold">
                             {{i.first_name}} {{i.last_name}}
                         </h4>
                         <p>{{i.email}}</p>
                     </div>
-                    {% endfor %}
                 </div>
-                <!-- <div class="row">
+                {% if i == user %}
+                <div class="row">
                     <div class="col-12 main-container__follow-button">
-                        <a href="#">
-                            <button class="follow-button"><p>Follow</p></button>
+                        <a href="/profile/edit/{{user.id}}">
+                            <button class="follow-button"><p>Edit profile</p></button>
                         </a>
                     </div>
-                </div> -->
+                </div>
+                {% endif %}
+                {% endfor %}
                 <!-- <div class="row">
                     <div class="col-12 main-container__user-chitra-details">
                         <div class="row user-chitra-details--followers">
@@ -112,7 +114,4 @@
             </div>
         </div>
     </div>
-
-    <script src="static/js/load_components.js"></script>
-    <script src="static/js/main.js"></script>
 {% endblock %}

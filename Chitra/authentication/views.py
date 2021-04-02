@@ -12,11 +12,13 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def header(request):
-    user_details = User_details.objects.filter(user=int(request.POST.getlist('id')[0])).values_list()
-    print(request.POST.getlist('id')[0])
-    for i in user_details:
-        user_image = i[2]
-    return JsonResponse({'user_image': user_image}, safe=False)
+    if (request.user.is_authenticated):
+        user_details = User_details.objects.filter(user=int(request.POST.getlist('id')[0])).values_list()
+        for i in user_details:
+            user_image = i[2]
+        return JsonResponse({'user_image': user_image}, safe=False)
+    else:
+        return JsonResponse("No authenticated user", safe=False)
 
 def login(request):
     if request.method == "POST":

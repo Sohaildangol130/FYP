@@ -18,6 +18,18 @@
   color: red;
 }
 
+.m-top-15 {
+  margin-top: 15px;
+}
+
+.m-top-30 {
+  margin-top: 30px;
+}
+
+.m-btm-30 {
+  margin-bottom: 30px;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   font-family: "Open Sans", sans-serif;
 }
@@ -1117,5 +1129,21 @@ hr {
 
 .checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__zone, .checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__state, .checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__city, .checkout__main-container .main-container__checkout-form .checkout-form__user-address .user-address__zip-code {
   margin-top: 10px;
+}
+
+#edit-profile {
+  padding: 50px;
+}
+
+#edit-profile .edit-profile__user-image {
+  gap: 20px;
+}
+
+#edit-profile .edit-profile__user-image .user-image__view-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #eae6ff;
+  background-size: cover;
 }
 /*# sourceMappingURL=main.css.map */

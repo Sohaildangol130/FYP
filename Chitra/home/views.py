@@ -16,7 +16,6 @@ class index(ListView):
 
 def search(request):
     search_text = request.GET['search']
-    # print(search_text)
     search_filter = all_posts.objects.filter(post_name__icontains=search_text)
     
     messages.info(request, "Related posts for " + search_text)

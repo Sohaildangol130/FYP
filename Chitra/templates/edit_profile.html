@@ -1,0 +1,117 @@
+{% extends 'layouts/application.html' %}
+{% load static %}
+{% block body %}
+    <div class="container-fluid">
+        <div id="edit-profile" class="row justify-content-center">
+            <div class="col-md-5">
+                {% for message in messages %}
+                    {% if message.tags == "error" %}
+                    <div class="message message--error m-btm-30">
+                        <p>{{message}}</p>                        
+                    </div>       
+                    {% else %}
+                    <div class="message message--success m-btm-30">
+                        <p>{{message}}</p>                      
+                    </div>  
+                    {% endif %}
+                {% endfor %}
+                <form action="/profile/edit/user-image/{{user.id}}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12 edit-profile__user-image d-flex align-items-center">
+                            <div class="user-image__view-image" style="background-image: url('{%for i in user_details %}{{i.profile_picture.url}}{% endfor %}');"></div>
+                            <input class="user-image" type="file" accept="image/*" name="user_image" onchange="previewFile(this, '.user-image__view-image');">
+                        </div>
+                        <div class="col-md-12 m-top-15">
+                            <button type="submit">
+                                <p>Change</p>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <form action="/profile/edit/primary-details/{{user.id}}" method="post">
+                    {% csrf_token %}
+                    <div class="row">                        
+                        <div class="col-md-12 m-top-30">
+                            <h4>User details</h4>
+                        </div>                       
+                        <div class="col-md-6 m-top-15">
+                            <p>First name</p>
+                            <input type="text" name="first_name" value="{{user.first_name}}" required>
+                        </div>
+                        <div class="col-md-6 m-top-15">
+                            <p>Last name</p>
+                            <input type="text" name="last_name" value="{{user.last_name}}" required>
+                        </div>
+                        <div class="col-md-12 m-top-15">
+                            <p>Email</p>
+                            <input type="text" name="email" value="{{user.email}}" required>
+                        </div>
+                    </div> 
+                    <div class="row m-top-15">
+                        <div class="col-md-12">
+                            <button type="submit">
+                                <p>Update</p>
+                            </button>
+                        </div>
+                    </div>                   
+                </form>
+                <form action="/profile/edit/social-links/{{user.id}}" method="post" class="m-top-30">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Social Presence</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="m-top-15">
+                                <p>Facebook</p>
+                                <input type="text" name="facebook-link" value="{% for i in user_details%}{{i.facebook_link}}{% endfor %}">
+                            </div>
+                            <div class="m-top-15">
+                                <p>Instagram</p>
+                                <input type="text" name="instagram-link" value="{% for i in user_details%}{{i.instagram_link}}{% endfor %}">
+                            </div>
+                            <div class="m-top-15">
+                                <p>Behance</p>
+                                <input type="text" name="behance-link" value="{% for i in user_details%}{{i.behance_link}}{% endfor %}">
+                            </div>
+                            <div class="m-top-15">
+                                <p>Linkedin</p>
+                                <input type="text" name="linkedin-link" value="{% for i in user_details%}{{i.linkedin_link}}{% endfor %}">
+                            </div>
+                        </div>
+                        <div class="col-md-12 m-top-15">
+                            <button type="submit">
+                                <p>Add links</p>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <form action="/profile/edit/password/{{user.id}}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12 m-top-30">
+                            <h4>New password</h4>
+                            <p class="small text-link--color">After changing the password, you'll be logged out from your profile.</p>
+                        </div>
+                        <div class="col-md-12 m-top-15">
+                            <p>Password</p>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="col-md-12 m-top-15">
+                            <p>Re-enter password</p>
+                            <input type="password" name="repassword">
+                        </div>
+                    </div>
+                    <div class="row m-top-15">
+                        <div class="col-md-12">
+                            <button type="submit">
+                                <p>Change password</p>
+                            </button>
+                        </div>
+                    </div>
+                </form>                
+            </div>
+        </div>
+    </div>
+{% endblock %}

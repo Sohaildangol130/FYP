@@ -1,0 +1,13 @@
+#edit-profile{
+    padding: 50px;
+    .edit-profile__user-image{
+        gap: 20px;
+        .user-image__view-image{
+            height: 100px; 
+            width: 100px; 
+            border-radius: 50%;
+            background-color: $primary-color-faded;
+            background-size: cover;
+        }
+    }
+}
