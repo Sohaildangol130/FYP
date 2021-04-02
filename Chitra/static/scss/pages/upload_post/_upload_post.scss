@@ -4,12 +4,15 @@
 
 .upload-photo__upload{
     position: relative;
+    background-size: cover;
+    background-position: center;
     border: 1px $border-color dashed;
     border-radius: 10px;
     padding: 115px 0;
     display: grid;
     align-items: center;
     text-align: center;
+    min-height: 500px;
 }
 
 .upload-photo__upload input{

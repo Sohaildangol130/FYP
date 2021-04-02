@@ -7,5 +7,6 @@ function previewFile(input, view_image){
             $(view_image).css("background-image","url(" + reader.result + ")");
         }
         reader.readAsDataURL(file);
+        $('.upload__text').addClass('display-none');
     }
 }

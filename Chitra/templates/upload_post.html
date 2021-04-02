@@ -9,11 +9,12 @@
                 {% csrf_token %}
                 <div class="row main-container__upload-photo">
                     <div class="col-12 upload-photo__upload">
-                        <img class="upload--uploaded-image" src="" alt="">
-                        <input class="file" type="file" name="image"  accept="image/*"/>
-                        <i class="fas fa-upload upload-photo__upload--upload-icon"></i>
-                        <h3 class="upload-photo__upload--main-text">Click here to upload your artwork.</h3>
-                        <h6 class="upload-photo__upload--secondary-text">Image size of 3:2 ratio is recommended.</h6>
+                        <input class="file" type="file" name="image" accept="image/*" onchange="previewFile(this, '.upload-photo__upload');"/>
+                        <div class="upload__text">
+                            <i class="fas fa-upload upload-photo__upload--upload-icon"></i>
+                            <h3 class="upload-photo__upload--main-text">Click here to upload your artwork.</h3>
+                            <h6 class="upload-photo__upload--secondary-text">Image size of 3:2 ratio is recommended.</h6>
+                        </div>
                     </div>
                 </div>
                 <div class="row main-container__title">
