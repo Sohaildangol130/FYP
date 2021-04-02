@@ -78,10 +78,29 @@
                         </div>   
                         <div class="row social-medias--all-links">
                             <div class="col-12">
-                                <i class="social-medias--all-links__facebook fab fa-facebook-square"></i>
-                                <i class="social-medias--all-links__instagram fab fa-instagram"></i>
-                                <i class="social-medias--all-links__behance fab fa-behance-square"></i>
-                                <i class="social-medias--all-links__linkedin fab fa-linkedin"></i>
+                                {% for i in secondary_details %}
+                                {% if i.facebook_link %}
+                                <a href="{{i.facebook_link}}" target="_blank">
+                                    <i class="social-medias--all-links__facebook fab fa-facebook-square"></i>
+                                </a>
+                                {% endif %}
+                                {% if i.instagram_link %}
+                                <a href="{{i.instagram_link}}" target="_blank">
+                                    <i class="social-medias--all-links__instagram fab fa-instagram"></i>
+                                </a>                                
+                                {% endif %}
+                                {% if i.behance_link %}
+                                <a href="{{i.behance_link}}" target="_blank">
+                                    <i class="social-medias--all-links__behance fab fa-behance-square"></i>
+                                </a>                                
+                                {% endif %}
+                                {% if i.linkedin_link %}
+                                <a href="{{i.linkedin_link}}" target="_blank">
+                                    <i class="social-medias--all-links__linkedin fab fa-linkedin"></i>
+                                </a>                                
+                                {% endif %}                               
+                                
+                                {% endfor %}
                             </div>
                         </div>                        
                     </div>
