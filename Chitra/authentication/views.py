@@ -31,9 +31,9 @@ def login(request):
                 return redirect('/')
             else:
                 messages.error(request, "Username or password is incorrect.")
-                return render(request, 'login.html')         
+                return render(request, 'login.html', {'title': "Login - Glad you're back!!"})         
     else:
-        return render(request, 'login.html')
+        return render(request, 'login.html', {'title': "Login - Glad you're back!!"})
 
 def signup(request):
     if request.method == 'POST':
@@ -48,13 +48,13 @@ def signup(request):
             return render(request, 'register.html')
         elif (password != repassword):
             messages.error(request, "The passwords do not match. Please try it again.")
-            return render(request, 'register.html')
+            return render(request, 'register.html', {'title': 'Signup - Create, share, sell and grow as an artist.'})
         else:
             user = User.objects.create_user(username=first_name + str(random.randint(0,99999)), first_name=first_name, last_name=last_name, email=email, password=password)
             user.save()
         return redirect ('/')
     else:
-        return render(request, 'register.html')
+        return render(request, 'register.html', {'title': 'Signup - Create, share, sell and grow as an artist.'})
 
 def reset_password(request):
     if request.method == "POST":
@@ -76,9 +76,9 @@ def reset_password(request):
             return redirect('/auth/login')
         else:
             messages.error(request, "Oops!! We don't have any account registered with that email.")
-            return render(request, 'forget_password.html')
+            return render(request, 'forget_password.html', {'title': "Login - Reset your account's password"})
     else:
-        return render(request, 'forget_password.html')
+        return render(request, 'forget_password.html', {'title': "Login - Reset your account's password"})
 
 def logout(request):
     response = HttpResponseRedirect('/auth/login')

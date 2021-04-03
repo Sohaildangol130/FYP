@@ -4,7 +4,9 @@ from .models import all_posts
 # Create your views here.
 def view_post(request, id):
     post = all_posts.objects.filter(id=id)
-    return render (request, 'view_post.html', {'post': post})
+    for i in post:
+        title = i.post_name
+    return render (request, 'view_post.html', {'post': post, 'title': title})
 
 def upload_post(request):
     if (request.user.is_authenticated):
@@ -19,6 +21,6 @@ def upload_post(request):
                 post.save()
                 return redirect('/')        
         else:
-            return render(request, 'upload_post.html')
+            return render(request, 'upload_post.html', {'title': 'Upload your artwork'})
     else:
         return redirect('/')

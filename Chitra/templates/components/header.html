@@ -1,3 +1,4 @@
+{% load static %}
 <div class="container-fluid">
     <input type="hidden" class="user_id" value="{{user.id}}">
     <div class="row">
@@ -66,13 +67,16 @@
                             <div class="nav-item--checkout-box container-fluid nav-box">
                                 <div class="row checkout-box__container">
                                     <div class="nav-item--checkout-box__container__all-checkout-items">
-                                    </div>
-                                    
+                                    </div>                                    
                                     <div class="nav-item--checkout-box__container--checkout-item checkout-item--view-all col-lg-12">
                                         <a href="/checkout/">
                                         <p class="bold">Proceed to checkout</p>
                                         </a>
                                     </div>
+                                </div>
+                                <div class="check-box__container--empty" style="text-align: center;">
+                                    <img style="width: 200px;" src="{% static 'img/Empty_states/No_items.svg' %}" alt="">
+                                    <p class="bold m-top-15">No items to checkout!!</>
                                 </div>
                             </div>
                         </li>
@@ -85,10 +89,7 @@
                             <div class="nav-item nav-item--profile profile-btn" data-click="false"></div>
                             <div class="nav-item--profile-box container-fluid nav-box">
                                 <a href="/profile/{{user.id}}"><p class="profile-box--links">Profile</p></a>
-                                <a href="#"><p class="profile-box--links">Edit profile</p></a>
-                                <a href="#"><p class="profile-box--links">Settings</p></a>
-                                <a href="#"><p class="profile-box--links">Liked posts</p></a>
-                                <a href="#"><p class="profile-box--links">Saved posts</p></a>
+                                <a href="/profile/edit/{{user.id}}"><p class="profile-box--links">Settings</p></a>
                                 <a href="/auth/logout"><button class="profile-box--links logout"><p>Logout</p></button></a>
                             </div>
                         </li>

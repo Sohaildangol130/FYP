@@ -33,9 +33,9 @@ def order(request):
                 return response
             else:
                 messages.error(request, "Oops!! It seems there isn't any product to checkout.")
-                return render(request, 'checkout.html')
+                return render(request, 'checkout.html', {'title': 'Checkout'})
         else:
-            return render(request, 'checkout.html')
+            return render(request, 'checkout.html', {'title': 'Checkout'})
     else:
         return redirect('/')
 

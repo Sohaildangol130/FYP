@@ -8,13 +8,16 @@ from django.contrib import messages
 def profile_details(request, id):
     user_posts = all_posts.objects.filter(user=id) 
     user_details = User.objects.filter(id=id)
+    for i in user_details:
+        title = 'User profile - ' + i.first_name + ' ' + i.last_name
+    print(title)
     secondary_details = User_details.objects.filter(user=id) 
-    return render(request, 'profile.html', {'user_posts': user_posts, 'user_details': user_details, 'secondary_details': secondary_details})
+    return render(request, 'profile.html', {'user_posts': user_posts, 'user_details': user_details, 'secondary_details': secondary_details, 'title': title})
 
 def edit_profile(request, id):
     if (request.user.is_authenticated) and (request.user.id == id):
         user_details = User_details.objects.filter(user=id)
-        return render(request, 'edit_profile.html', {'user_details': user_details})
+        return render(request, 'edit_profile.html', {'user_details': user_details, 'title': 'Edit your Chitra profile'})
     else:
         return redirect('/')
 

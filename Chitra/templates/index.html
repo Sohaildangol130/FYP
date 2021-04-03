@@ -18,13 +18,11 @@
         {% endif %}
     {% endfor %}
     <div class="contents__main-container row">
+        {% if object_list %}        
         {% for post in object_list %}
         <div class="contents__main-container__content content--original col-lg-3 col-md-6 col-sm-12" style="margin-top:30px">
             <a href="posts/{{post.id}}">
                 <div class="content--image" style="background-image: url({{post.image.url}});">
-                    <!-- <div class="content--image--original">
-                        <p class="white-color bold">Original</p>
-                    </div> -->
                 </div>
             </a>
             <div class="container-fluid">
@@ -34,14 +32,24 @@
                         <a href="/profile/{{post.user.id}}"><p>by {{post.user.first_name}} {{post.user.last_name}}</p></a>
                     </div>
                     <div class="col-4 content--description--like-save actions">
-                        <!-- <i class="fas fa-bookmark actions__save"></i>
-                        <i class="fas fa-heart actions__like"></i> -->
                         <h6 style="text-align: right;">Rs {{post.price}}</h6>
                     </div>
                 </div>
             </div>
         </div>
         {% endfor %}
+        {% else %}
+        <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-4" style="text-align: center;">
+                    <img style="width: 280px" src="{% static 'img/Empty_states/No_posts.svg' %}" alt="">
+                    <h4 class="bold m-top-15">Sorry!!</>
+                    <p>There aren't posts to show you at the moment.</p>
+                    <p>Please try again later.</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
