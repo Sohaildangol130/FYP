@@ -41,7 +41,7 @@ def order(request):
                 fail_silently=False
                 )
                 response = HttpResponseRedirect('/')
-                response.delete_cookie('items')
+                # response.delete_cookie('items')
                 messages.success(request, "Your order has been placed!!")
                 return response
             else:
