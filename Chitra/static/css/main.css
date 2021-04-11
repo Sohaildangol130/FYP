@@ -517,6 +517,7 @@ hr {
   width: 32px;
   border-radius: 50%;
   background-color: #eae6ff;
+  background-image: url("/static/img/default.png");
   background-size: cover;
 }
 
@@ -828,6 +829,7 @@ hr {
   width: 70px;
   border-radius: 50%;
   background-color: #eae6ff;
+  background-image: url("/static/img/default.png");
   background-size: cover;
 }
 
@@ -1054,6 +1056,8 @@ hr {
   width: 58px;
   border-radius: 50%;
   background-color: #eae6ff;
+  background-image: url("/static/img/default.png");
+  background-size: cover;
   margin-right: 20px;
 }
 
@@ -1143,6 +1147,7 @@ hr {
   width: 100px;
   border-radius: 50%;
   background-color: #eae6ff;
+  background-image: url("/static/img/default.png");
   background-size: cover;
 }
 /*# sourceMappingURL=main.css.map */

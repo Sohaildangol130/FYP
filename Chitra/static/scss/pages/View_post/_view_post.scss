@@ -13,6 +13,8 @@
     width: 58px;
     border-radius: 50%;
     background-color: $primary-color-faded;
+    background-image: url('/static/img/default.png');
+    background-size: cover;
     margin-right: 20px;
 }
 

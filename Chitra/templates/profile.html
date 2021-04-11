@@ -6,11 +6,17 @@
             <div class="col-md-3 col-sm-0 user-details__main-container">
                 <div class="row">
                     <div class="col-12 main-container__profile-picture">
-                        {% for i in secondary_details %}
-                        <div class="profile-picture"  style="background-image: url({{i.profile_picture.url}});">
-
-                        </div>
-                        {% endfor %}
+                        {% if secondary_details %}
+                            {% for i in secondary_details %}
+                                {% if i.profile_picture %}
+                                    <div class="profile-picture"  style="background-image: url({{i.profile_picture.url}});"></div>
+                                {% else %}
+                                    <div class="profile-picture"></div>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <div class="profile-picture"></div>
+                        {% endif %}
                     </div>
                 </div>
                 {% for i in user_details%}
@@ -69,6 +75,8 @@
                         </div>                        
                     </div>                    
                 </div> -->
+                {% for i in secondary_details %}
+                {% if i.facebook_link or i.instagram_link or i.behance_link or i.linkedin_link %}
                 <div class="row">
                     <div class="col-12 main-container__social-medias">
                         <div class="row">
@@ -105,6 +113,8 @@
                         </div>                        
                     </div>
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
             <div class="col-md-9 col-sm-12 user-posts__main-container">
                 <div class="main-container__all-posts row">                    
@@ -112,7 +122,7 @@
                     {% for i in user_posts %}
                     <div class="all-posts__single-post col-md-4">
                         <a href="/posts/{{i.id}}">
-                            <div class="single-post--image" style="background-image: url({{i.image.url}});">
+                            <div class="single-post--image" style="background-image: url({{i.image.url}}); background-size: cover">
                             </div>
                         </a>
                         <div class="container">

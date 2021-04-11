@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="user-description col-12">
                       
-                    <div class="user-description__profile-picture" {% for i in user_details %} style="background-image: url('{{i.profile_picture.url}}'); background-size: cover" {% endfor %}></div>
+                    <div class="user-description__profile-picture" {% for i in user_details %} style="background-image: url('{{i.profile_picture.url}}');" {% endfor %}></div>
                     <div class="user-description__user-name"><a href="/profile/{{i.user.id}}"><h5 >{{i.user.first_name}} {{i.user.last_name}}</h5></a></div>      
                 </div>                              
             </div>
