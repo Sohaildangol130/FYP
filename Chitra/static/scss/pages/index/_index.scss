@@ -5,12 +5,9 @@
 
 .content--image{
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     height: 300px;
     transition: .3s all;
-    &:hover{
-        background-size: 110%;
-    }
 }
 
 .content--image--original{

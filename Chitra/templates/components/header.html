@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="check-box__container--empty" style="text-align: center;">
                                     <img style="width: 200px;" src="{% static 'img/Empty_states/No_items.svg' %}" alt="">
-                                    <p class="bold m-top-15">No items to checkout!!</>
+                                    <p class="bold m-top-15">No items to checkout!!</p>
                                 </div>
                             </div>
                         </li>
@@ -97,9 +97,9 @@
                     {% else %}
                     <div class="all-nav-items__no-user">
                         <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--search-bar">
-                            <form>
+                            <form action="/search" method="GET">
                                 <input type="text" name="search" placeholder="Search..">
-                              </form>
+                            </form>
                         </li>
                         <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--login">
                             <a href="/auth/login">

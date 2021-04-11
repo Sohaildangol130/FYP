@@ -32,7 +32,9 @@
                         <a href="/profile/{{post.user.id}}"><p>by {{post.user.first_name}} {{post.user.last_name}}</p></a>
                     </div>
                     <div class="col-4 content--description--like-save actions">
+                        {% if post.price %}
                         <h6 style="text-align: right;">Rs {{post.price}}</h6>
+                        {% endif %}
                     </div>
                 </div>
             </div>

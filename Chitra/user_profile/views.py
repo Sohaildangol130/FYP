@@ -10,7 +10,6 @@ def profile_details(request, id):
     user_details = User.objects.filter(id=id)
     for i in user_details:
         title = 'User profile - ' + i.first_name + ' ' + i.last_name
-    print(title)
     secondary_details = User_details.objects.filter(user=id) 
     return render(request, 'profile.html', {'user_posts': user_posts, 'user_details': user_details, 'secondary_details': secondary_details, 'title': title})
 

@@ -13,7 +13,8 @@
             </div>
             <div class="row">
                 <div class="user-description col-12">
-                    <div class="user-description__profile-picture"></div>
+                      
+                    <div class="user-description__profile-picture" {% for i in user_details %} style="background-image: url('{{i.profile_picture.url}}'); background-size: cover" {% endfor %}></div>
                     <div class="user-description__user-name"><a href="/profile/{{i.user.id}}"><h5 >{{i.user.first_name}} {{i.user.last_name}}</h5></a></div>      
                 </div>                              
             </div>
@@ -34,14 +35,21 @@
                         </div>
                         <div class="col-md-6">
                             <div class="post__price-buy">
-                                <h5 class="post__price">Rs {{i.price}}</h5>
-                                {% if user.is_authenticated %}
-                                <button class="post__buy" data-id="{{i.id}}"><p>Add to cart</p></button>
-                                {% else %}
-                                <a href="/auth/login">
-                                    <button class="post__buy"><p>Add to cart</p></button>
-                                </a>
+                                {% if i.user != user %}
+                                    {% if i.price %}
+                                    <h5 class="post__price">Rs {{i.price}}</h5>
+                                        {% if user.is_authenticated %}
+                                        <button class="post__buy" data-id="{{i.id}}"><p>Add to cart</p></button>
+                                        {% else %}
+                                        <a href="/auth/login">
+                                            <button class="post__buy"><p>Add to cart</p></button>
+                                        </a>
+                                        {% endif %}
+                                    {% else %}
+                                        <p class="bold">Not for sale!!</p>
+                                    {% endif %}
                                 {% endif %}
+
                             </div>  
                         </div>                            
                     </div>

@@ -580,14 +580,10 @@ hr {
 
 .content--image {
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   height: 300px;
   -webkit-transition: .3s all;
   transition: .3s all;
-}
-
-.content--image:hover {
-  background-size: 110%;
 }
 
 .content--image--original {

@@ -7,4 +7,4 @@ class all_posts(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="all_posts")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    price = models.IntegerField()
+    price = models.IntegerField(blank=True, null=True)

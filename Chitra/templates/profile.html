@@ -113,9 +113,6 @@
                     <div class="all-posts__single-post col-md-4">
                         <a href="/posts/{{i.id}}">
                             <div class="single-post--image" style="background-image: url({{i.image.url}});">
-                                <!-- <div class="image--original">
-                                    <p class="white-color bold">Original</p>
-                                </div> -->
                             </div>
                         </a>
                         <div class="container">
@@ -124,7 +121,9 @@
                                     <h5 class="bold">{{i.post_name}}</h5>
                                 </div>
                                 <div class="col-4 description--like-save">
+                                    {% if i.price %}
                                     <h6 style="text-align: right">Rs {{i.price}}</h6>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
