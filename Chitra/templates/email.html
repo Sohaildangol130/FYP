@@ -1,0 +1,14 @@
+<p>Hi {{first_name}},</h1>
+<p>The artworks you have ordered:</p>
+<ul>
+    {% for i in all_products %}
+    <li>
+        <h2>{{i.post_name}} - Rs {{i.price}}</h2>
+    </li>
+    {% endfor %}
+</ul>
+
+<p>The delivery will be done within 2-3 businesss days. We'll keep you updated.</p>
+<br>
+<p>-------- This is an automatically generated email. --------</p>
+
