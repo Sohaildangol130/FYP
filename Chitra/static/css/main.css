@@ -1080,14 +1080,32 @@ hr {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-}
-
-.post__buy {
-  margin-left: 20px;
+  gap: 20px;
 }
 
 .post__caption {
   margin-top: 20px;
+}
+
+.post__delete {
+  cursor: pointer;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  background-color: unset;
+  padding: unset;
+}
+
+.post__delete i {
+  color: #ff2d2d;
+  font-size: 20px;
+}
+
+.post__delete:hover {
+  background-color: unset;
+}
+
+.post__delete:hover i {
+  color: #c70000;
 }
 
 .post__line {

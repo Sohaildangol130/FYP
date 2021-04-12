@@ -31,14 +31,26 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 20px;
 }
-
-.post__buy{
-    margin-left: 20px;
-}
-
 .post__caption{
     margin-top: 20px;
+}
+.post__delete{
+    cursor: pointer;
+    transition: .5s all;
+    background-color: unset;
+    padding: unset;
+    i{
+        color: rgb(255, 45, 45);
+        font-size: 20px;
+    }
+    &:hover{
+        background-color: unset;
+        i{
+            color: hsl(0, 100%, 39%);
+        }
+    }
 }
 
 .post__line{

@@ -12,8 +12,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="user-description col-12">
-                      
+                <div class="user-description col-12">                      
                     <div class="user-description__profile-picture" {% for i in user_details %} style="background-image: url('{{i.profile_picture.url}}');" {% endfor %}></div>
                     <div class="user-description__user-name"><a href="/profile/{{i.user.id}}"><h5 >{{i.user.first_name}} {{i.user.last_name}}</h5></a></div>      
                 </div>                              
@@ -48,6 +47,14 @@
                                     {% else %}
                                         <p class="bold">Not for sale!!</p>
                                     {% endif %}
+                                {% else %}
+                                    <button class="post__buy"><p>Edit post</p></button>  
+                                    <form action="delete/{{i.id}}" method="post">
+                                    {% csrf_token %}
+                                        <button class="post__delete">
+                                            <i class="fas fa-trash"></i>                             
+                                        </button> 
+                                    </form>
                                 {% endif %}
 
                             </div>  

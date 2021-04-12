@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import all_posts
 from user_profile.models import User_details
+from django.contrib import messages
+
 # Create your views here.
 def view_post(request, id):
     post = all_posts.objects.filter(id=id)
@@ -29,5 +31,14 @@ def upload_post(request):
                     return redirect('/')  
         else:
             return render(request, 'upload_post.html', {'title': 'Upload your artwork'})
+    else:
+        return redirect('/')
+
+def delete_post(request, id):
+    if request.method == "POST":
+        post = all_posts.objects.filter(id=id)
+        post.delete()
+        messages.success(request, "Your post has been successfully deleted!!")
+        return redirect('/')
     else:
         return redirect('/')
