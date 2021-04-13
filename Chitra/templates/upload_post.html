@@ -9,7 +9,7 @@
                 {% csrf_token %}
                 <div class="row main-container__upload-photo">
                     <div class="col-12 upload-photo__upload">
-                        <input class="file" type="file" name="image" accept="image/*" onchange="previewFile(this, '.upload-photo__upload');"/>
+                        <input class="file" type="file" name="image" accept="image/*" onchange="previewFile(this, '.upload-photo__upload');" required/>
                         <div class="upload__text">
                             <i class="fas fa-upload upload-photo__upload--upload-icon"></i>
                             <h3 class="upload-photo__upload--main-text">Click here to upload your artwork.</h3>
@@ -19,68 +19,15 @@
                 </div>
                 <div class="row main-container__title">
                     <h4 class="bold">Title</h4>
-                    <input type="text" name="post_name" id="">
-                </div>
-                <div class="row main-container__tags display-none">
-                    <h4 class="bold">Tags</h4>
-                    <input type="text" name="" id="">
-                    <div class="tags--suggestions">
-                        <p class="bold tags--suggestions--heading">Suggested tags</p>
-                        <div class="tags--suggestions--all-suggestions">
-                            <p>Art</p>
-                            <p>Art</p>
-                            <p>Art</p>
-                        </div>
-                    </div>
+                    <input type="text" name="post_name" id="" required>
                 </div>
                 <div class="row main-container__description">
                     <h4 class="bold">Description</h4>
-                    <textarea name="description" id=""></textarea>
+                    <textarea name="description" id="" required></textarea>
                 </div>
                 <div class="row main-container__price">
                     <h4 class="bold">Price</h4>
                     <input type="number" name="price">
-                </div>
-                <div class="row main-container__hr display-none">
-                </div>
-                <div class="row main-container__sell-art display-none">
-                    <div class="col-12">
-                        <div class="row sell-art__heading">
-                            <div class="col-12">
-                                <h4 class="bold">Would you like to sell your art?</h4>
-                            </div>
-                        </div>
-                        <div class="row sell-art__art-type align-items-center">
-                            <div class="col-md-2 .col-sm-12">
-                                <h5>Art type:</h5>
-                            </div>
-                            <div class="col-md-10 .col-sm-12">
-                                <div class="row art-type--all-selector">
-                                    <div class="col-2 all-selector--selector">
-                                        <input type="radio" name="price" value="original">
-                                        <p>Original</p>
-                                    </div>
-                                    <div class="col-2 all-selector--selector">
-                                        <input type="radio" name="price" value="copy">
-                                        <p>Copy</p>
-                                    </div>
-                                    <div class="col-2 all-selector--selector">
-                                        <input type="radio" name="price" value="original">
-                                        <p>Not today</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row sell-art__art-price align-items-center">
-                            
-                            <div class="col-md-2 .col-sm-12">
-                                <h5>Price:</h5>
-                            </div>
-                            <div class="col-md-10 .col-sm-12">
-                                <input type="text">
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center main-container__submit-and-cancel-btn">
                         <button type="submit" class="main-container__submit-btn"><p>Upload</p></button>
@@ -94,21 +41,4 @@
         <div class="col-md-2 col-sm-0"></div>
     </div>
 </div>
-
-<!-- view image after upload -->
-<!-- <script>
-    function filePreview(input){
-        if (input.files && input.files[0]){
-            var reader = new FileReader();
-            reader.onload = function (e){
-                $('#uploadForm + img').remove();
-                $('#uploadForm').after ('img src="'+e.target.result+'"style="width:100%;"')
-            }
-        }
-      }
-
-      $(".file").change(function(){
-          filePreview()
-      })
-</script> -->
 {% endblock %}

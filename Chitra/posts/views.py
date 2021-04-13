@@ -34,6 +34,23 @@ def upload_post(request):
     else:
         return redirect('/')
 
+def edit_post(request, id):    
+    if request.method == "POST":
+        title = request.POST['post_name']
+        description = request.POST['description']
+        post = all_posts.objects.filter(user=request.user).get(id=id)
+        post.post_name = title
+        post.description = description
+        post.save()
+        messages.success(request, "Your post was updated!!")
+        return redirect('/posts/' + str(id))
+    else:
+        if (all_posts.objects.filter(user=request.user).filter(id=id)):
+            post = all_posts.objects.filter(user=request.user).filter(id=id)
+            return render(request, 'edit_post.html', {'post': post})
+        else:
+            return redirect('/')
+
 def delete_post(request, id):
     if request.method == "POST":
         post = all_posts.objects.filter(id=id)

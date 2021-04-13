@@ -6,6 +6,17 @@
     <div class="row">
         <div class="col-md-2 col-sm-0"></div>
         <div class="col-md-8 col-sm-12 post__main-container">
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="message message--error">
+                    <p>{{message}}</p>                        
+                </div>       
+                {% else %}
+                <div class="message message--success">
+                    <p>{{message}}</p>                      
+                </div>  
+                {% endif %}
+            {% endfor %}
             <div class="row main-container__post-name">
                 <div class="col-12">
                     <h2 class="post-name">{{i.post_name}}</h2>
@@ -48,7 +59,9 @@
                                         <p class="bold">Not for sale!!</p>
                                     {% endif %}
                                 {% else %}
-                                    <button class="post__buy"><p>Edit post</p></button>  
+                                    <a href="edit/{{i.id}}">
+                                        <button class="post__buy"><p>Edit post</p></button> 
+                                    </a> 
                                     <form action="delete/{{i.id}}" method="post">
                                     {% csrf_token %}
                                         <button class="post__delete">
