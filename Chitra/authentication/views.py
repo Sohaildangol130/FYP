@@ -56,7 +56,10 @@ def signup(request):
         else:
             user = User.objects.create_user(username=first_name + str(random.randint(0,99999)), first_name=first_name, last_name=last_name, email=email, password=password)
             user.save()
-        return redirect ('/')
+            user = auth.authenticate(username=User.objects.get(email__exact=email), password=password)
+            if user is not None:
+                auth.login(request, user)
+                return redirect('/')
     else:
         return render(request, 'register.html', {'title': 'Signup - Create, share, sell and grow as an artist.'})
 

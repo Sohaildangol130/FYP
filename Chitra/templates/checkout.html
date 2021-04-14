@@ -31,7 +31,12 @@
                     </div>
                     <div class="col-md-4 user-details__last-name">
                         <p>Phone number</p>
-                        <input type="number" name="phone_number" required>
+                        <input name="phone_number"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            type = "number"
+                            maxlength = "10"
+                            required
+                        />
                     </div>
                 </div>
             </div>

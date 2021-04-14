@@ -13,8 +13,9 @@
                     {% if user.is_authenticated %}
                     <div class="all-nav-items__user">
                         <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--search-bar">
-                            <form action="/search" method="GET">
+                            <form action="/search" method="GET" style="position: relative;">
                                 <input type="text" name="search" placeholder="Search..">
+                                <button type="submit" style="padding: unset; background: unset; position: absolute; right: 8px; top: 12px"><i class="fas fa-search" style="margin: unset; color: #c2c2c2"></i></button>
                             </form>
                         </li>
                         <!-- <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--notification">
@@ -66,7 +67,7 @@
                             </div>
                             <div class="nav-item--checkout-box container-fluid nav-box">
                                 <div class="row checkout-box__container">
-                                    <div class="nav-item--checkout-box__container__all-checkout-items">
+                                    <div class="nav-item--checkout-box__container__all-checkout-items col-12">
                                     </div>                                    
                                     <div class="nav-item--checkout-box__container--checkout-item checkout-item--view-all col-lg-12">
                                         <a href="/checkout/">
@@ -99,6 +100,7 @@
                         <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--search-bar">
                             <form action="/search" method="GET">
                                 <input type="text" name="search" placeholder="Search..">
+                                <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
                         <li class="header__nav-bar--all-nav-items--item header__nav-bar--all-nav-items--item--login">
