@@ -1,11 +1,14 @@
 var id = $('.user_id').val();
+
 $.ajax({
     type: "POST",
     url: "/auth/header",
     data: {'id': id},
     datatype: 'json',
     success: (data) => {
-        $('.nav-item--profile').css("background-image", "url(/media/"+data.user_image+")")
+        if (data.user_image != ''){
+            $('.nav-item--profile').css("background-image", "url(/media/"+data.user_image+")")
+        }
     }
 })
 

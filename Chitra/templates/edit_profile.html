@@ -19,7 +19,7 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-12 edit-profile__user-image d-flex align-items-center">
-                            <div class="user-image__view-image" {% for i in user_details %} style="background-image: url('{{i.profile_picture.url}}');" {% endfor %}></div>
+                            <div class="user-image__view-image" {% for i in user_details %} {% if i.profile_picture %} style="background-image: url('{{i.profile_picture.url}}');" {% endif %} {% endfor %}></div>
                             <input class="user-image" type="file" accept="image/*" name="user_image" onchange="previewFile(this, '.user-image__view-image');">
                         </div>
                         <div class="col-md-12 m-top-15">

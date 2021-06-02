@@ -3,7 +3,6 @@ function previewFile(input, view_image){
     if(file){
         var reader = new FileReader();
         reader.onload = function(){
-            console.log(reader.result)
             $(view_image).css("background-image","url(" + reader.result + ")");
         }
         reader.readAsDataURL(file);

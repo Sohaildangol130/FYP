@@ -56,7 +56,10 @@ def signup(request):
         else:
             user = User.objects.create_user(username=first_name + str(random.randint(0,99999)), first_name=first_name, last_name=last_name, email=email, password=password)
             user.save()
-            user = auth.authenticate(username=User.objects.get(email__exact=email), password=password)
+            user_detail = User.objects.get(email__exact=email)
+            user_secondary = User_details(user=user_detail)
+            user_secondary.save()
+            user = auth.authenticate(username=user_detail.username, password=password)
             if user is not None:
                 auth.login(request, user)
                 return redirect('/')
